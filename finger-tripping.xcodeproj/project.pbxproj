@@ -12,6 +12,7 @@
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
 		FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB323032C58008A34E9 /* Assets.xcassets */; };
 		FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */; };
+		FFAFBEC72303313B008A34E9 /* Hypre.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEC62303313B008A34E9 /* Hypre.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FFAFBEB323032C58008A34E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAFBEB623032C58008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFAFBEB823032C58008A34E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFAFBEC62303313B008A34E9 /* Hypre.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Hypre.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		FFAFBEA023032C56008A34E9 = {
 			isa = PBXGroup;
 			children = (
+				FFAFBEC62303313B008A34E9 /* Hypre.mlmodel */,
 				FFAFBEAB23032C56008A34E9 /* finger-tripping */,
 				FFAFBEAA23032C56008A34E9 /* Products */,
 			);
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
+				FFAFBEC72303313B008A34E9 /* Hypre.mlmodel in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
