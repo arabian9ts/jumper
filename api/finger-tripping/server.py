@@ -1,5 +1,5 @@
-from grpc.prediction_pb2 import *
-from grpc.prediction_pb2_grpc import add_PredictionServiceServicer_to_server, PredictionServiceServicer
+from prediction_pb2 import *
+from prediction_pb2_grpc import add_PredictionServiceServicer_to_server, PredictionServiceServicer
 
 from concurrent import futures
 from datetime import datetime
