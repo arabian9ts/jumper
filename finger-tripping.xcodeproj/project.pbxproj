@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2723046DE8004EF6BE /* AudioListener.swift */; };
+		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
 		FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* ViewController.swift */; };
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA13CA2723046DE8004EF6BE /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
+		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +60,12 @@
 			children = (
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
+				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
 				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
 				FFAFBEB323032C58008A34E9 /* Assets.xcassets */,
 				FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */,
 				FFAFBEB823032C58008A34E9 /* Info.plist */,
+				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
 			);
 			path = "finger-tripping";
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
+				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
+				DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
