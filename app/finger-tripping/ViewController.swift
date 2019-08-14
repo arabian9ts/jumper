@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         audioEngine = AudioListener()
-//
         self.timer = Timer.scheduledTimer(timeInterval: 2.0,
                                           target: self,
                                           selector: #selector(self.judgeSound(_:)),
@@ -41,6 +40,7 @@ class ViewController: UIViewController {
     @objc func judgeSound(_ timer: Timer) {
         guard (audioEngine != nil) else { return }
         if AudioListener.default.audioEngine.isRunning {
+            
             print(AudioListener.default.audioBuffer.array())
         }
     }

@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F696CCC43E98B23DF4069ED /* Pods_finger_tripping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54465FF390F84793593A479F /* Pods_finger_tripping.framework */; };
 		DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2723046DE8004EF6BE /* AudioListener.swift */; };
 		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
+		DAF8E52523049E8700720323 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF8E52423049E8700720323 /* SwiftProtobuf.framework */; };
+		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
+		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
 		FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* ViewController.swift */; };
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
@@ -17,8 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54465FF390F84793593A479F /* Pods_finger_tripping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_finger_tripping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C089494FBAFC495DD6F64E91 /* Pods-finger-tripping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finger-tripping.release.xcconfig"; path = "Target Support Files/Pods-finger-tripping/Pods-finger-tripping.release.xcconfig"; sourceTree = "<group>"; };
+		C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finger-tripping.debug.xcconfig"; path = "Target Support Files/Pods-finger-tripping/Pods-finger-tripping.debug.xcconfig"; sourceTree = "<group>"; };
 		DA13CA2723046DE8004EF6BE /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
 		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
+		DAF8E52423049E8700720323 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftProtobuf.framework; sourceTree = "<group>"; };
+		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
+		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +43,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF8E52523049E8700720323 /* SwiftProtobuf.framework in Frameworks */,
+				5F696CCC43E98B23DF4069ED /* Pods_finger_tripping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28F33C78C4380885026AD051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54465FF390F84793593A479F /* Pods_finger_tripping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B1D4E97DCE3D4DC74D07C0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */,
+				C089494FBAFC495DD6F64E91 /* Pods-finger-tripping.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DAF8E5262304A95F00720323 /* grpc */ = {
+			isa = PBXGroup;
+			children = (
+				DAF8E5272304A95F00720323 /* prediction.grpc.swift */,
+				DAF8E5282304A95F00720323 /* prediction.pb.swift */,
+			);
+			path = grpc;
+			sourceTree = "<group>";
+		};
 		FFAFBEA023032C56008A34E9 = {
 			isa = PBXGroup;
 			children = (
 				FFAFBEAB23032C56008A34E9 /* finger-tripping */,
 				FFAFBEAA23032C56008A34E9 /* Products */,
+				9B1D4E97DCE3D4DC74D07C0E /* Pods */,
+				28F33C78C4380885026AD051 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +99,8 @@
 		FFAFBEAB23032C56008A34E9 /* finger-tripping */ = {
 			isa = PBXGroup;
 			children = (
+				DAF8E52423049E8700720323 /* SwiftProtobuf.framework */,
+				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
 				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
@@ -77,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFAFBEBB23032C58008A34E9 /* Build configuration list for PBXNativeTarget "finger-tripping" */;
 			buildPhases = (
+				D5B93C61A0170510492C8239 /* [CP] Check Pods Manifest.lock */,
 				FFAFBEA523032C56008A34E9 /* Sources */,
 				FFAFBEA623032C56008A34E9 /* Frameworks */,
 				FFAFBEA723032C56008A34E9 /* Resources */,
+				DB9034CD425CA7D971EA7375 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +181,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D5B93C61A0170510492C8239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-finger-tripping-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB9034CD425CA7D971EA7375 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-finger-tripping/Pods-finger-tripping-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-finger-tripping/Pods-finger-tripping-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-finger-tripping/Pods-finger-tripping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FFAFBEA523032C56008A34E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
+				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
+				DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */,
 				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
 				DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */,
@@ -288,10 +377,15 @@
 		};
 		FFAFBEBC23032C58008A34E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V564G2V7F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/finger-tripping",
+				);
 				INFOPLIST_FILE = "finger-tripping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,10 +400,15 @@
 		};
 		FFAFBEBD23032C58008A34E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C089494FBAFC495DD6F64E91 /* Pods-finger-tripping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V564G2V7F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/finger-tripping",
+				);
 				INFOPLIST_FILE = "finger-tripping/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
