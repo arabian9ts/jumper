@@ -1,8 +1,5 @@
-#PROTO_DIR_CLIENT = app/finger-tripping/grpc
-#PROTO_DIR_SERVER = api/finger-tripping/grpc
-
-PROTO_DIR_CLIENT = app/
-PROTO_DIR_SERVER = api/
+PROTO_DIR_CLIENT = app/finger-tripping/grpc
+PROTO_DIR_SERVER = api/finger-tripping/grpc
 
 .PHONY: protoc
 protoc:
