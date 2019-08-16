@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "container:/Users/naganoriku/Downloads/20190814_HackU/gvr-ios-sdk/Samples/VideoWidgetDemo/VideoWidgetDemo/VideoWidgetDemo"
+      name = "VR_Video">
+   </Group>
+   <FileRef
+      location = "group:VideoWidgetDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

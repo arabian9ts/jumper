@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12054D5E1CB5E26900B9320A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12054D5D1CB5E26900B9320A /* Main.storyboard */; };
+		1237A9921C85243300AD3514 /* VideoPlayerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237A98F1C85243300AD3514 /* VideoPlayerAppDelegate.m */; };
+		1237A9931C85243300AD3514 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237A9911C85243300AD3514 /* VideoPlayerViewController.m */; };
+		1237A9951C8524A400AD3514 /* launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1237A9941C8524A400AD3514 /* launch.xib */; };
+		1237A9971C8524D200AD3514 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1237A9961C8524D200AD3514 /* main.m */; };
+		1237A99B1C85254A00AD3514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1237A99A1C85254A00AD3514 /* Assets.xcassets */; };
+		555063F323047EF70054E650 /* Angel_Falls.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063EC23047EEC0054E650 /* Angel_Falls.mp4 */; };
+		555063F423047EFA0054E650 /* Canaima_Lagoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063EB23047EEC0054E650 /* Canaima_Lagoon.mp4 */; };
+		555063F823047F290054E650 /* Congo_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063F723047F170054E650 /* Congo_1.mp4 */; };
+		555063F923047F2F0054E650 /* Congo_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063F623047F170054E650 /* Congo_2.mp4 */; };
+		555063FA23047F330054E650 /* Italy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063F123047EEC0054E650 /* Italy.mp4 */; };
+		555063FB23047F350054E650 /* Macao.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063E723047EEB0054E650 /* Macao.mp4 */; };
+		555063FC23047F380054E650 /* Marmots.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063ED23047EEC0054E650 /* Marmots.mp4 */; };
+		555063FD23047F3B0054E650 /* Mont_Maudit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063E923047EEB0054E650 /* Mont_Maudit.mp4 */; };
+		555063FE23047F3D0054E650 /* Moscow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063EA23047EEC0054E650 /* Moscow.mp4 */; };
+		555063FF23047F3F0054E650 /* Russia.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063EE23047EEC0054E650 /* Russia.mp4 */; };
+		5550640023047F420054E650 /* Switzerland.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063F223047EEC0054E650 /* Switzerland.mp4 */; };
+		5550640123047F440054E650 /* Tiger.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 555063EF23047EEC0054E650 /* Tiger.mp4 */; };
+		CBC45A5E724290003C9125ED /* libPods-VideoWidgetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0479609B25899F9BFBCCD4 /* libPods-VideoWidgetDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12054D5D1CB5E26900B9320A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
+		1237A9741C8523A300AD3514 /* VideoWidgetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoWidgetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1237A98E1C85243300AD3514 /* VideoPlayerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		1237A98F1C85243300AD3514 /* VideoPlayerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		1237A9901C85243300AD3514 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = SOURCE_ROOT; };
+		1237A9911C85243300AD3514 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = SOURCE_ROOT; };
+		1237A9941C8524A400AD3514 /* launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = launch.xib; sourceTree = SOURCE_ROOT; };
+		1237A9961C8524D200AD3514 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		1237A99A1C85254A00AD3514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		1237A99C1C85256700AD3514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		4F4186F784AA7624127D5F9F /* Pods-VideoWidgetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoWidgetDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoWidgetDemo/Pods-VideoWidgetDemo.release.xcconfig"; sourceTree = "<group>"; };
+		555063E723047EEB0054E650 /* Macao.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Macao.mp4; path = resources/Macao.mp4; sourceTree = SOURCE_ROOT; };
+		555063E923047EEB0054E650 /* Mont_Maudit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Mont_Maudit.mp4; path = resources/Mont_Maudit.mp4; sourceTree = SOURCE_ROOT; };
+		555063EA23047EEC0054E650 /* Moscow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Moscow.mp4; path = resources/Moscow.mp4; sourceTree = SOURCE_ROOT; };
+		555063EB23047EEC0054E650 /* Canaima_Lagoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Canaima_Lagoon.mp4; path = resources/Canaima_Lagoon.mp4; sourceTree = SOURCE_ROOT; };
+		555063EC23047EEC0054E650 /* Angel_Falls.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Angel_Falls.mp4; path = resources/Angel_Falls.mp4; sourceTree = SOURCE_ROOT; };
+		555063ED23047EEC0054E650 /* Marmots.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Marmots.mp4; path = resources/Marmots.mp4; sourceTree = SOURCE_ROOT; };
+		555063EE23047EEC0054E650 /* Russia.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Russia.mp4; path = resources/Russia.mp4; sourceTree = SOURCE_ROOT; };
+		555063EF23047EEC0054E650 /* Tiger.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tiger.mp4; path = resources/Tiger.mp4; sourceTree = SOURCE_ROOT; };
+		555063F123047EEC0054E650 /* Italy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Italy.mp4; path = resources/Italy.mp4; sourceTree = SOURCE_ROOT; };
+		555063F223047EEC0054E650 /* Switzerland.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Switzerland.mp4; path = resources/Switzerland.mp4; sourceTree = SOURCE_ROOT; };
+		555063F623047F170054E650 /* Congo_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Congo_2.mp4; path = resources/Congo_2.mp4; sourceTree = SOURCE_ROOT; };
+		555063F723047F170054E650 /* Congo_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Congo_1.mp4; path = resources/Congo_1.mp4; sourceTree = SOURCE_ROOT; };
+		5C0479609B25899F9BFBCCD4 /* libPods-VideoWidgetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoWidgetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50B07C2B3FAB33285DBBB5D /* Pods-VideoWidgetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoWidgetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoWidgetDemo/Pods-VideoWidgetDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F78FD35D4CF13B987035DB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D6421124718137E16392998D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F176296741E7D5E7A8B46410 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1237A9711C8523A300AD3514 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBC45A5E724290003C9125ED /* libPods-VideoWidgetDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1237A96B1C8523A300AD3514 = {
+			isa = PBXGroup;
+			children = (
+				1237A9761C8523A300AD3514 /* VideoWidgetDemo */,
+				1237A9751C8523A300AD3514 /* Products */,
+				8373F48F4023B600D2E4D0BA /* Pods */,
+				56CB38025D61B789CB6B3B41 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1237A9751C8523A300AD3514 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1237A9741C8523A300AD3514 /* VideoWidgetDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1237A9761C8523A300AD3514 /* VideoWidgetDemo */ = {
+			isa = PBXGroup;
+			children = (
+				12054D5D1CB5E26900B9320A /* Main.storyboard */,
+				1237A99C1C85256700AD3514 /* Info.plist */,
+				1237A99A1C85254A00AD3514 /* Assets.xcassets */,
+				1237A9941C8524A400AD3514 /* launch.xib */,
+				1237A98E1C85243300AD3514 /* VideoPlayerAppDelegate.h */,
+				1237A98F1C85243300AD3514 /* VideoPlayerAppDelegate.m */,
+				1237A9901C85243300AD3514 /* VideoPlayerViewController.h */,
+				1237A9911C85243300AD3514 /* VideoPlayerViewController.m */,
+				555063E523047ED40054E650 /* VR_Video */,
+				1237A9771C8523A300AD3514 /* Supporting Files */,
+			);
+			path = VideoWidgetDemo;
+			sourceTree = "<group>";
+		};
+		1237A9771C8523A300AD3514 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1237A9961C8524D200AD3514 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		555063E523047ED40054E650 /* VR_Video */ = {
+			isa = PBXGroup;
+			children = (
+				555063EC23047EEC0054E650 /* Angel_Falls.mp4 */,
+				555063EB23047EEC0054E650 /* Canaima_Lagoon.mp4 */,
+				555063F723047F170054E650 /* Congo_1.mp4 */,
+				555063F623047F170054E650 /* Congo_2.mp4 */,
+				555063F123047EEC0054E650 /* Italy.mp4 */,
+				555063E723047EEB0054E650 /* Macao.mp4 */,
+				555063ED23047EEC0054E650 /* Marmots.mp4 */,
+				555063E923047EEB0054E650 /* Mont_Maudit.mp4 */,
+				555063EA23047EEC0054E650 /* Moscow.mp4 */,
+				555063EE23047EEC0054E650 /* Russia.mp4 */,
+				555063F223047EEC0054E650 /* Switzerland.mp4 */,
+				555063EF23047EEC0054E650 /* Tiger.mp4 */,
+			);
+			name = VR_Video;
+			path = "/Users/naganoriku/Downloads/20190814_HackU/gvr-ios-sdk/Samples/VideoWidgetDemo/VideoWidgetDemo/VideoWidgetDemo";
+			sourceTree = "<absolute>";
+		};
+		56CB38025D61B789CB6B3B41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6421124718137E16392998D /* libPods.a */,
+				5C0479609B25899F9BFBCCD4 /* libPods-VideoWidgetDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8373F48F4023B600D2E4D0BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F176296741E7D5E7A8B46410 /* Pods.debug.xcconfig */,
+				C0F78FD35D4CF13B987035DB /* Pods.release.xcconfig */,
+				B50B07C2B3FAB33285DBBB5D /* Pods-VideoWidgetDemo.debug.xcconfig */,
+				4F4186F784AA7624127D5F9F /* Pods-VideoWidgetDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1237A9731C8523A300AD3514 /* VideoWidgetDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1237A98B1C8523A300AD3514 /* Build configuration list for PBXNativeTarget "VideoWidgetDemo" */;
+			buildPhases = (
+				5F7FF4936B8ECE1D78E0A878 /* [CP] Check Pods Manifest.lock */,
+				1237A9701C8523A300AD3514 /* Sources */,
+				1237A9711C8523A300AD3514 /* Frameworks */,
+				1237A9721C8523A300AD3514 /* Resources */,
+				A78FF890EF026E4BFAE77659 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoWidgetDemo;
+			productName = VideoWidgetDemo;
+			productReference = 1237A9741C8523A300AD3514 /* VideoWidgetDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1237A96C1C8523A300AD3514 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				TargetAttributes = {
+					1237A9731C8523A300AD3514 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = FV2HC6Y9D9;
+					};
+				};
+			};
+			buildConfigurationList = 1237A96F1C8523A300AD3514 /* Build configuration list for PBXProject "VideoWidgetDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 1237A96B1C8523A300AD3514;
+			productRefGroup = 1237A9751C8523A300AD3514 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1237A9731C8523A300AD3514 /* VideoWidgetDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1237A9721C8523A300AD3514 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1237A99B1C85254A00AD3514 /* Assets.xcassets in Resources */,
+				555063FF23047F3F0054E650 /* Russia.mp4 in Resources */,
+				555063FC23047F380054E650 /* Marmots.mp4 in Resources */,
+				5550640123047F440054E650 /* Tiger.mp4 in Resources */,
+				1237A9951C8524A400AD3514 /* launch.xib in Resources */,
+				555063F323047EF70054E650 /* Angel_Falls.mp4 in Resources */,
+				555063FA23047F330054E650 /* Italy.mp4 in Resources */,
+				555063FE23047F3D0054E650 /* Moscow.mp4 in Resources */,
+				555063FD23047F3B0054E650 /* Mont_Maudit.mp4 in Resources */,
+				555063F923047F2F0054E650 /* Congo_2.mp4 in Resources */,
+				12054D5E1CB5E26900B9320A /* Main.storyboard in Resources */,
+				555063F823047F290054E650 /* Congo_1.mp4 in Resources */,
+				5550640023047F420054E650 /* Switzerland.mp4 in Resources */,
+				555063FB23047F350054E650 /* Macao.mp4 in Resources */,
+				555063F423047EFA0054E650 /* Canaima_Lagoon.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F7FF4936B8ECE1D78E0A878 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoWidgetDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A78FF890EF026E4BFAE77659 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoWidgetDemo/Pods-VideoWidgetDemo-resources.sh",
+				"${PODS_ROOT}/GVRSDK/Resources/CardboardSDK.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitCore.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitDialogs.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitDialogsArrows.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitDialogsStrings.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitHUD.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/MaterialRobotoFontLoader.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CardboardSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleKitCore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleKitDialogs.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleKitDialogsArrows.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleKitDialogsStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleKitHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialRobotoFontLoader.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoWidgetDemo/Pods-VideoWidgetDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1237A9701C8523A300AD3514 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1237A9931C85243300AD3514 /* VideoPlayerViewController.m in Sources */,
+				1237A9971C8524D200AD3514 /* main.m in Sources */,
+				1237A9921C85243300AD3514 /* VideoPlayerAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1237A9891C8523A300AD3514 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1237A98A1C8523A300AD3514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1237A98C1C8523A300AD3514 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B50B07C2B3FAB33285DBBB5D /* Pods-VideoWidgetDemo.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FV2HC6Y9D9;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test..VideoWidgetDemo.fingertripping;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1237A98D1C8523A300AD3514 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4186F784AA7624127D5F9F /* Pods-VideoWidgetDemo.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = FV2HC6Y9D9;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test..VideoWidgetDemo.fingertripping;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1237A96F1C8523A300AD3514 /* Build configuration list for PBXProject "VideoWidgetDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1237A9891C8523A300AD3514 /* Debug */,
+				1237A98A1C8523A300AD3514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1237A98B1C8523A300AD3514 /* Build configuration list for PBXNativeTarget "VideoWidgetDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1237A98C1C8523A300AD3514 /* Debug */,
+				1237A98D1C8523A300AD3514 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1237A96C1C8523A300AD3514 /* Project object */;
+}
