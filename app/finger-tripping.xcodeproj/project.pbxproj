@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5F696CCC43E98B23DF4069ED /* Pods_finger_tripping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54465FF390F84793593A479F /* Pods_finger_tripping.framework */; };
 		DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2723046DE8004EF6BE /* AudioListener.swift */; };
 		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
-		DAF8E52523049E8700720323 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF8E52423049E8700720323 /* SwiftProtobuf.framework */; };
 		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
@@ -26,7 +25,6 @@
 		C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finger-tripping.debug.xcconfig"; path = "Target Support Files/Pods-finger-tripping/Pods-finger-tripping.debug.xcconfig"; sourceTree = "<group>"; };
 		DA13CA2723046DE8004EF6BE /* AudioListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListener.swift; sourceTree = "<group>"; };
 		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
-		DAF8E52423049E8700720323 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftProtobuf.framework; sourceTree = "<group>"; };
 		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF8E52523049E8700720323 /* SwiftProtobuf.framework in Frameworks */,
 				5F696CCC43E98B23DF4069ED /* Pods_finger_tripping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +62,6 @@
 				C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */,
 				C089494FBAFC495DD6F64E91 /* Pods-finger-tripping.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,7 +95,6 @@
 		FFAFBEAB23032C56008A34E9 /* finger-tripping */ = {
 			isa = PBXGroup;
 			children = (
-				DAF8E52423049E8700720323 /* SwiftProtobuf.framework */,
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,

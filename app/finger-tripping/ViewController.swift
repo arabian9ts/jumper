@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     var audioEngine: AudioListener? = nil
     var engine = AVAudioEngine()
     var timer: Timer!
-
+    let client = Prediction_PredictionServiceService.init(address: "127.0.0.1:50051", secure: false)
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if var engine = audioEngine {
@@ -41,7 +42,11 @@ class ViewController: UIViewController {
         guard (audioEngine != nil) else { return }
         if AudioListener.default.audioEngine.isRunning {
             
-            print(AudioListener.default.audioBuffer.array())
+            var request = Prediction_PredictRequest()
+            request.magnitudes = AudioListener.default.audioBuffer.array()
+            let res = try? client.predict(request)
+            print("Response" + res)
+            
         }
     }
     
