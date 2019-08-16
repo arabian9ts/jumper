@@ -3,7 +3,7 @@
 https://drive.google.com/file/d/1djwiqGQeifcNsTHwXIrk0GQ63JeKVSfY/view?usp=sharing
 
 2. set folder
-./figer-tripping/resources/
+./figer-tripping/resources/*
 
 3. Execution this code 
 $ pod update
