@@ -1,5 +1,4 @@
 PROTO_DIR_CLIENT = app/finger-tripping/grpc
-PROTO_DIR_SERVER = api/finger-tripping/grpc
 
 .PHONY: protoc
 protoc:
@@ -14,5 +13,4 @@ protoc_client:
 
 .PHONY: protoc_server
 protoc_server:
-	protoc prediction.proto \
-	--python_out=$(PROTO_DIR_SERVER)
+	python code_gen.py
