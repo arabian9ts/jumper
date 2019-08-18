@@ -24,7 +24,7 @@ struct Prediction_PredictRequest {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var magnitudes: [Float] = []
+  var sounds: [Float] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -50,27 +50,27 @@ fileprivate let _protobuf_package = "prediction"
 extension Prediction_PredictRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".PredictRequest"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "magnitudes"),
+    1: .same(proto: "sounds"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedFloatField(value: &self.magnitudes)
+      case 1: try decoder.decodeRepeatedFloatField(value: &self.sounds)
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.magnitudes.isEmpty {
-      try visitor.visitPackedFloatField(value: self.magnitudes, fieldNumber: 1)
+    if !self.sounds.isEmpty {
+      try visitor.visitPackedFloatField(value: self.sounds, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Prediction_PredictRequest, rhs: Prediction_PredictRequest) -> Bool {
-    if lhs.magnitudes != rhs.magnitudes {return false}
+    if lhs.sounds != rhs.sounds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

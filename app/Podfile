@@ -1,0 +1,7 @@
+platform :ios, '12.4'
+
+target 'finger-tripping' do
+  use_frameworks!
+  pod 'SwiftGRPC'
+end
+

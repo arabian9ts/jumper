@@ -4,8 +4,8 @@ protoc.main(
     (
         '',
         '-I.',
-        '--python_out=.',
-        '--grpc_python_out=.',
+        '--python_out=api/finger-tripping',
+        '--grpc_python_out=api/finger-tripping',
         './prediction.proto',
     )   
 )

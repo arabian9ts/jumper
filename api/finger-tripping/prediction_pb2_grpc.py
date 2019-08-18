@@ -14,7 +14,7 @@ class PredictionServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Predict = channel.unary_unary(
+    self.Predict = channel.stream_unary(
         '/prediction.PredictionService/Predict',
         request_serializer=prediction__pb2.PredictRequest.SerializeToString,
         response_deserializer=prediction__pb2.PredictResponse.FromString,
@@ -25,7 +25,7 @@ class PredictionServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def Predict(self, request, context):
+  def Predict(self, request_iterator, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,7 +35,7 @@ class PredictionServiceServicer(object):
 
 def add_PredictionServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Predict': grpc.unary_unary_rpc_method_handler(
+      'Predict': grpc.stream_unary_rpc_method_handler(
           servicer.Predict,
           request_deserializer=prediction__pb2.PredictRequest.FromString,
           response_serializer=prediction__pb2.PredictResponse.SerializeToString,
