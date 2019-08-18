@@ -25,47 +25,52 @@ import Foundation
 import SwiftGRPC
 import SwiftProtobuf
 
-internal protocol Prediction_PredictionServicePredictCall: ClientCallUnary {}
+internal protocol Prediction_PredictionServicePredictCall: ClientCallClientStreaming {
+  /// Send a message to the stream. Nonblocking.
+  func send(_ message: Prediction_PredictRequest, completion: @escaping (Error?) -> Void) throws
+  /// Do not call this directly, call `send()` in the protocol extension below instead.
+  func _send(_ message: Prediction_PredictRequest, timeout: DispatchTime) throws
 
-fileprivate final class Prediction_PredictionServicePredictCallBase: ClientCallUnaryBase<Prediction_PredictRequest, Prediction_PredictResponse>, Prediction_PredictionServicePredictCall {
+  /// Call this to close the connection and wait for a response. Blocking.
+  func closeAndReceive() throws -> Prediction_PredictResponse
+  /// Call this to close the connection and wait for a response. Nonblocking.
+  func closeAndReceive(completion: @escaping (ResultOrRPCError<Prediction_PredictResponse>) -> Void) throws
+}
+
+internal extension Prediction_PredictionServicePredictCall {
+  /// Send a message to the stream and wait for the send operation to finish. Blocking.
+  func send(_ message: Prediction_PredictRequest, timeout: DispatchTime = .distantFuture) throws { try self._send(message, timeout: timeout) }
+}
+
+fileprivate final class Prediction_PredictionServicePredictCallBase: ClientCallClientStreamingBase<Prediction_PredictRequest, Prediction_PredictResponse>, Prediction_PredictionServicePredictCall {
   override class var method: String { return "/prediction.PredictionService/Predict" }
 }
 
 
 /// Instantiate Prediction_PredictionServiceServiceClient, then call methods of this protocol to make API calls.
 internal protocol Prediction_PredictionServiceService: ServiceClient {
-  /// Synchronous. Unary.
-  func predict(_ request: Prediction_PredictRequest, metadata customMetadata: Metadata) throws -> Prediction_PredictResponse
-  /// Asynchronous. Unary.
-  @discardableResult
-  func predict(_ request: Prediction_PredictRequest, metadata customMetadata: Metadata, completion: @escaping (Prediction_PredictResponse?, CallResult) -> Void) throws -> Prediction_PredictionServicePredictCall
+  /// Asynchronous. Client-streaming.
+  /// Use methods on the returned object to stream messages and
+  /// to close the connection and wait for a final response.
+  func predict(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Prediction_PredictionServicePredictCall
 
 }
 
 internal extension Prediction_PredictionServiceService {
-  /// Synchronous. Unary.
-  func predict(_ request: Prediction_PredictRequest) throws -> Prediction_PredictResponse {
-    return try self.predict(request, metadata: self.metadata)
-  }
-  /// Asynchronous. Unary.
-  @discardableResult
-  func predict(_ request: Prediction_PredictRequest, completion: @escaping (Prediction_PredictResponse?, CallResult) -> Void) throws -> Prediction_PredictionServicePredictCall {
-    return try self.predict(request, metadata: self.metadata, completion: completion)
+  /// Asynchronous. Client-streaming.
+  func predict(completion: ((CallResult) -> Void)?) throws -> Prediction_PredictionServicePredictCall {
+    return try self.predict(metadata: self.metadata, completion: completion)
   }
 
 }
 
 internal final class Prediction_PredictionServiceServiceClient: ServiceClientBase, Prediction_PredictionServiceService {
-  /// Synchronous. Unary.
-  internal func predict(_ request: Prediction_PredictRequest, metadata customMetadata: Metadata) throws -> Prediction_PredictResponse {
+  /// Asynchronous. Client-streaming.
+  /// Use methods on the returned object to stream messages and
+  /// to close the connection and wait for a final response.
+  internal func predict(metadata customMetadata: Metadata, completion: ((CallResult) -> Void)?) throws -> Prediction_PredictionServicePredictCall {
     return try Prediction_PredictionServicePredictCallBase(channel)
-      .run(request: request, metadata: customMetadata)
-  }
-  /// Asynchronous. Unary.
-  @discardableResult
-  internal func predict(_ request: Prediction_PredictRequest, metadata customMetadata: Metadata, completion: @escaping (Prediction_PredictResponse?, CallResult) -> Void) throws -> Prediction_PredictionServicePredictCall {
-    return try Prediction_PredictionServicePredictCallBase(channel)
-      .start(request: request, metadata: customMetadata, completion: completion)
+      .start(metadata: customMetadata, completion: completion)
   }
 
 }
@@ -74,7 +79,7 @@ internal final class Prediction_PredictionServiceServiceClient: ServiceClientBas
 /// If one of the methods returning `ServerStatus?` returns nil,
 /// it is expected that you have already returned a status to the client by means of `session.close`.
 internal protocol Prediction_PredictionServiceProvider: ServiceProvider {
-  func predict(request: Prediction_PredictRequest, session: Prediction_PredictionServicePredictSession) throws -> Prediction_PredictResponse
+  func predict(session: Prediction_PredictionServicePredictSession) throws -> Prediction_PredictResponse?
 }
 
 extension Prediction_PredictionServiceProvider {
@@ -87,7 +92,7 @@ extension Prediction_PredictionServiceProvider {
     case "/prediction.PredictionService/Predict":
       return try Prediction_PredictionServicePredictSessionBase(
         handler: handler,
-        providerBlock: { try self.predict(request: $0, session: $1 as! Prediction_PredictionServicePredictSessionBase) })
+        providerBlock: { try self.predict(session: $0 as! Prediction_PredictionServicePredictSessionBase) })
           .run()
     default:
       throw HandleMethodError.unknownMethod
@@ -95,7 +100,26 @@ extension Prediction_PredictionServiceProvider {
   }
 }
 
-internal protocol Prediction_PredictionServicePredictSession: ServerSessionUnary {}
+internal protocol Prediction_PredictionServicePredictSession: ServerSessionClientStreaming {
+  /// Do not call this directly, call `receive()` in the protocol extension below instead.
+  func _receive(timeout: DispatchTime) throws -> Prediction_PredictRequest?
+  /// Call this to wait for a result. Nonblocking.
+  func receive(completion: @escaping (ResultOrRPCError<Prediction_PredictRequest?>) -> Void) throws
 
-fileprivate final class Prediction_PredictionServicePredictSessionBase: ServerSessionUnaryBase<Prediction_PredictRequest, Prediction_PredictResponse>, Prediction_PredictionServicePredictSession {}
+  /// Exactly one of these two methods should be called if and only if your request handler returns nil;
+  /// otherwise SwiftGRPC will take care of sending the response and status for you.
+  /// Close the connection and send a single result. Non-blocking.
+  func sendAndClose(response: Prediction_PredictResponse, status: ServerStatus, completion: (() -> Void)?) throws
+  /// Close the connection and send an error. Non-blocking.
+  /// Use this method if you encountered an error that makes it impossible to send a response.
+  /// Accordingly, it does not make sense to call this method with a status of `.ok`.
+  func sendErrorAndClose(status: ServerStatus, completion: (() -> Void)?) throws
+}
+
+internal extension Prediction_PredictionServicePredictSession {
+  /// Call this to wait for a result. Blocking.
+  func receive(timeout: DispatchTime = .distantFuture) throws -> Prediction_PredictRequest? { return try self._receive(timeout: timeout) }
+}
+
+fileprivate final class Prediction_PredictionServicePredictSessionBase: ServerSessionClientStreamingBase<Prediction_PredictRequest, Prediction_PredictResponse>, Prediction_PredictionServicePredictSession {}
 

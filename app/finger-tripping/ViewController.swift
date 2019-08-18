@@ -29,21 +29,42 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         audioEngine = AudioListener()
-        self.timer = Timer.scheduledTimer(timeInterval: 2.0,
-                                          target: self,
-                                          selector: #selector(self.judgeSound(_:)),
-                                          userInfo: nil,
-                                          repeats: true)
+        self.timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(self.judgeSound(_:)),
+            userInfo: nil,
+            repeats: true
+        )
         self.timer?.fire()
     }
     
     @objc func judgeSound(_ timer: Timer) {
         guard (audioEngine != nil) else { return }
         if AudioListener.default.audioEngine.isRunning {
-            var request = Prediction_PredictRequest()
-            request.magnitudes = AudioListener.default.audioBuffer.array()
-            let res = try? client.predict(request)
-            print("Response: \(String(describing: res))")
+            do {
+                let stream = try client.predict(completion: nil)
+                let sounds = AudioListener.default.audioBuffer.array().chunks(23000)
+                var headRequest = Prediction_PredictRequest()
+                var tailRequest = Prediction_PredictRequest()
+                headRequest.sounds = sounds[0]
+                tailRequest.sounds = sounds[1]
+                try stream.send(headRequest) { error in
+                    if let error = error {
+                        print(error)
+                    }
+                }
+                try stream.send(tailRequest) { error in
+                    if let error = error {
+                        print(error)
+                    }
+                }
+                try stream.closeAndReceive() { res in
+                    print("Response: \(String(describing: res.result?.label))")
+                }
+            } catch {
+                print(error)
+            }
         }
     }
     

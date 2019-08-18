@@ -15,7 +15,6 @@ class AudioListener: NSObject {
     var audioEngine: AVAudioEngine!
     var audioInputNode : AVAudioInputNode!
     var audioBuffer: AVAudioPCMBuffer!
-    var audioFile: AVAudioFile = AVAudioFile()
     var sessionActive = false
     
     override init(){
@@ -31,7 +30,7 @@ class AudioListener: NSObject {
         audioInputNode = audioEngine.inputNode
         
         /// Sample Rate
-        let frameLength = UInt32(2048)
+        let frameLength = UInt32(44100)
         audioBuffer = AVAudioPCMBuffer(pcmFormat: audioInputNode.outputFormat(forBus: 0), frameCapacity: frameLength)
         audioBuffer.frameLength = frameLength
         
@@ -41,6 +40,7 @@ class AudioListener: NSObject {
             let channels = UnsafeBufferPointer(start: buffer.floatChannelData, count: Int(buffer.format.channelCount))
             let floats = [Float](UnsafeBufferPointer(start: channels[0], count: Int(buffer.frameLength)))
             for i in 0..<Int(self.audioBuffer.frameLength) {
+                guard floats.indices.contains(i) else { break }
                 self.audioBuffer.floatChannelData?.pointee[i] = floats[i]
             }
         })
@@ -50,7 +50,7 @@ class AudioListener: NSObject {
     private func startAudioSession(){
         let audioSession = AVAudioSession.sharedInstance()
         let preferredSampleRate = 44100.0 /// Targeted default hardware rate
-        let preferredIOBufferDuration = 0.02 /// 1024 / 44100 = 0.02
+        let preferredIOBufferDuration = 0.01 /// 1024 / 44100 = 0.02
         
         do {
             try audioSession.setCategory(AVAudioSession.Category.record,

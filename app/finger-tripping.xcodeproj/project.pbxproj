@@ -12,6 +12,7 @@
 		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
 		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
+		FF962942230988480079D6E0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF962941230988480079D6E0 /* Array+.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
 		FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* ViewController.swift */; };
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
 		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
+		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
+				FF962941230988480079D6E0 /* Array+.swift */,
 				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
 				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
 				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
@@ -225,6 +228,7 @@
 				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
 				DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */,
+				FF962942230988480079D6E0 /* Array+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

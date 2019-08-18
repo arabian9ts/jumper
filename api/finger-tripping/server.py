@@ -13,41 +13,52 @@ from keras.models import load_model
 
 from config import *
 from util.mel import *
-from model.label import *
 
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
-def restore_model():
-    return load_model(os.path.dirname(os.path.abspath(__file__)) + '/model/alexnet.h5')
 
 class RoutePredictServicer(PredictionServiceServicer):
     def __init__(self):
-        restore_model()
+        self.restore_model()
+        self.test_flight()
 
-    def Predict(self, request, response):
+    def restore_model(self):
+      self.hypre = load_model(os.path.dirname(os.path.abspath(__file__)) + '/model/alexnet.h5')
+
+    def parse_to_label(self, probs):
+        result = np.argmax(probs)
+        return conf.labels[result]
+
+    def test_flight(self):
+        sound = np.array([i/44000 for i in range(44100)])
+        melspectrogram = sound_to_mel(conf, sound)
+        reshaped = np.reshape(melspectrogram, (1, 128, 128, 1))
+        probs = self.hypre.predict(reshaped)
+
+    def Predict(self, request_iterator, context):
         print("Predict Called : %s" % datetime.now())
-        sound = np.array(request.magnitudes[:conf.sampling_rate * conf.duration]) / 32767
+
+        sounds = []
+        for req in request_iterator:
+            sounds.extend(req.sounds)
+
+        sound = np.array(sounds[:conf.sampling_rate * conf.duration])
+        sound = sound * 10
         melspectrogram = sound_to_mel(conf, sound)
 
         if melspectrogram is not None:
             reshaped = np.reshape(melspectrogram, (1, 128, 128, 1))
-            probs = model.predict(reshaped)
-            label = parse_to_label(probs)
+            probs = self.hypre.predict(reshaped)
+            label = self.parse_to_label(probs)
         else:
-            label = parse_to_label(0)
+            label = "none"
 
-        # レスポンスを返す時はreturnするだけで良い
-        return PredictResponse(
-            label=label
-        )
+        return PredictResponse(label=label)
 
-
-# サーバーの実行
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    add_PredictionServiceServicer_to_server(
-        RoutePredictServicer(), server)
+    add_PredictionServiceServicer_to_server(RoutePredictServicer(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     print("Server Start!!")
