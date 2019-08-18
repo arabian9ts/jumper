@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var audioEngine: AudioListener? = nil
     var engine = AVAudioEngine()
     var timer: Timer!
-    let client = Prediction_PredictionServiceService.init(address: "127.0.0.1:50051", secure: false)
+    let client = Prediction_PredictionServiceServiceClient(address: "192.168.0.5:50051", secure: false)
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -35,18 +35,15 @@ class ViewController: UIViewController {
                                           userInfo: nil,
                                           repeats: true)
         self.timer?.fire()
-        // Do any additional setup after loading the view.
     }
     
     @objc func judgeSound(_ timer: Timer) {
         guard (audioEngine != nil) else { return }
         if AudioListener.default.audioEngine.isRunning {
-            
             var request = Prediction_PredictRequest()
             request.magnitudes = AudioListener.default.audioBuffer.array()
             let res = try? client.predict(request)
-            print("Response" + res)
-            
+            print("Response: \(String(describing: res))")
         }
     }
     

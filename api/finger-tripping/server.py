@@ -13,6 +13,7 @@ from keras.models import load_model
 
 from config import *
 from util.mel import *
+from model.label import *
 
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
@@ -25,7 +26,7 @@ class RoutePredictServicer(PredictionServiceServicer):
         restore_model()
 
     def Predict(self, request, response):
-        print("Predict Called : %s" % request.timestamp)
+        print("Predict Called : %s" % datetime.now())
         sound = np.array(request.magnitudes[:conf.sampling_rate * conf.duration]) / 32767
         melspectrogram = sound_to_mel(conf, sound)
 
@@ -46,7 +47,7 @@ class RoutePredictServicer(PredictionServiceServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     add_PredictionServiceServicer_to_server(
-        PredictionServiceServicer(), server)
+        RoutePredictServicer(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     print("Server Start!!")
