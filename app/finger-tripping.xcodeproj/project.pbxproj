@@ -12,9 +12,11 @@
 		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
 		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
+		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
+		FF438FF9230AC46F00522246 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = FF438FF8230AC46F00522246 /* resource */; };
 		FF962942230988480079D6E0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF962941230988480079D6E0 /* Array+.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
-		FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* ViewController.swift */; };
+		FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* VRViewController.swift */; };
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
 		FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB323032C58008A34E9 /* Assets.xcassets */; };
 		FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */; };
@@ -28,10 +30,12 @@
 		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
 		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
+		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
+		FF438FF8230AC46F00522246 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
 		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFAFBEAE23032C56008A34E9 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		FFAFBEB123032C56008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFAFBEB323032C58008A34E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAFBEB623032C58008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,16 +101,18 @@
 		FFAFBEAB23032C56008A34E9 /* finger-tripping */ = {
 			isa = PBXGroup;
 			children = (
+				FF438FF8230AC46F00522246 /* resource */,
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FF962941230988480079D6E0 /* Array+.swift */,
-				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
+				FFAFBEAE23032C56008A34E9 /* VRViewController.swift */,
 				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
 				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
 				FFAFBEB323032C58008A34E9 /* Assets.xcassets */,
 				FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */,
 				FFAFBEB823032C58008A34E9 /* Info.plist */,
 				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
+				FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */,
 			);
 			path = "finger-tripping";
 			sourceTree = "<group>";
@@ -145,6 +151,7 @@
 				TargetAttributes = {
 					FFAFBEA823032C56008A34E9 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -171,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF438FF9230AC46F00522246 /* resource in Resources */,
 				FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */,
 				FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */,
 				FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */,
@@ -222,11 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
+				FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */,
 				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
 				DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */,
 				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
+				FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */,
 				DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */,
 				FF962942230988480079D6E0 /* Array+.swift in Sources */,
 			);
@@ -289,6 +298,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -311,7 +321,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 			};
 			name = Debug;
 		};
@@ -350,6 +362,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -365,7 +378,9 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -375,6 +390,7 @@
 			baseConfigurationReference = C72F60D714F32442832901DD /* Pods-finger-tripping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V564G2V7F;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -388,6 +404,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "arabian9ts.finger-tripping.finger-tripping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -398,6 +418,7 @@
 			baseConfigurationReference = C089494FBAFC495DD6F64E91 /* Pods-finger-tripping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V564G2V7F;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -411,6 +432,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "arabian9ts.finger-tripping.finger-tripping";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
