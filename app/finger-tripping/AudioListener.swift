@@ -9,17 +9,16 @@
 import AVFoundation
 import UIKit
 
-class AudioListener: NSObject {
+class AudioListener {
     
-    static let `default` = AudioListener()
+    static let shared = AudioListener()
     var audioEngine: AVAudioEngine!
     var audioInputNode : AVAudioInputNode!
     var audioBuffer: AVAudioPCMBuffer!
     var sessionActive = false
     
-    override init(){
-        super.init()
-        startAudioSession()
+    private init() {
+        start()
         if sessionActive {
             installTap()
         }
@@ -47,7 +46,7 @@ class AudioListener: NSObject {
         try! audioEngine.start()
     }
     
-    private func startAudioSession(){
+    func start(){
         let audioSession = AVAudioSession.sharedInstance()
         let preferredSampleRate = 44100.0 /// Targeted default hardware rate
         let preferredIOBufferDuration = 0.01 /// 1024 / 44100 = 0.02
@@ -60,12 +59,12 @@ class AudioListener: NSObject {
             try audioSession.setPreferredIOBufferDuration(preferredIOBufferDuration)
             try audioSession.setActive(true)
             sessionActive = true
-        } catch let error as NSError {
+        } catch let error {
             print("Audio session error: \(error)")
         }
     }
     
-    func stopAudioEngine(){
+    func stop(){
         audioEngine.inputNode.removeTap(onBus: 0)
         audioEngine.stop()
     }
