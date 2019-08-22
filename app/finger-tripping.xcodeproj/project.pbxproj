@@ -14,6 +14,7 @@
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
 		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
 		FF438FF9230AC46F00522246 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = FF438FF8230AC46F00522246 /* resource */; };
+		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF962942230988480079D6E0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF962941230988480079D6E0 /* Array+.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
 		FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* VRViewController.swift */; };
@@ -32,6 +33,7 @@
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
 		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
 		FF438FF8230AC46F00522246 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
+		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				FFAFBEB823032C58008A34E9 /* Info.plist */,
 				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
 				FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */,
+				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
 			);
 			path = "finger-tripping";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */,
 				FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */,
 				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
 				DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */,

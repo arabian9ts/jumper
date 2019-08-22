@@ -49,7 +49,7 @@ class AudioListener {
     func start(){
         let audioSession = AVAudioSession.sharedInstance()
         let preferredSampleRate = 44100.0 /// Targeted default hardware rate
-        let preferredIOBufferDuration = 0.01 /// 1024 / 44100 = 0.02
+        let preferredIOBufferDuration = 0.1 /// 1024 / 44100 = 0.02
         
         do {
             try audioSession.setCategory(AVAudioSession.Category.record,

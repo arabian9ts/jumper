@@ -1,0 +1,6 @@
+numpy
+grpcio
+protobuf
+keras
+tensorflow
+librosa

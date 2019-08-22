@@ -18,7 +18,7 @@ class PredictionAPI {
     
     private init() {
         self.grpcClient = Prediction_PredictionServiceServiceClient(
-            address: "192.168.0.5:50051",
+            address: "frp.arabian9ts.com:50051",
             secure: false
         )
         self.chunkRequests = []

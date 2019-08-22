@@ -13,7 +13,7 @@ PODS:
     - gRPC-Core/Interface (= 1.19.0)
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.19.0)
-  - MetalScope (0.16.0)
+  - MetalScope (0.19.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -25,7 +25,7 @@ PODS:
   - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
-  - MetalScope (from `https://github.com/Fork-Forks/MetalScope`)
+  - MetalScope (from `https://github.com/turk-jk/MetalScope`)
   - SwiftGRPC
 
 SPEC REPOS:
@@ -38,21 +38,21 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   MetalScope:
-    :git: https://github.com/Fork-Forks/MetalScope
+    :git: https://github.com/turk-jk/MetalScope
 
 CHECKOUT OPTIONS:
   MetalScope:
-    :commit: 6e1148147f2f7b7a7060ada37370b89b5ad8c5e3
-    :git: https://github.com/Fork-Forks/MetalScope
+    :commit: 5e1070adc8c6912b0ddfaab93337a35baccb40e9
+    :git: https://github.com/turk-jk/MetalScope
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   gRPC-Core: bd9472c8daa2e414b9f8038ba667bf56ce0e02b8
-  MetalScope: 0453bf074a48927830018478cf7bc72f76645e5d
+  MetalScope: 086184b8bcfb0eff773a68cd3aaf53d52bf239c3
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftGRPC: 43d3e8db88f97e7386bd44f159ecdfad02ce3362
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
-PODFILE CHECKSUM: a989af22b75aaa5be60121d06773d4860f5d9619
+PODFILE CHECKSUM: 63048397e5ccc2db59c9be2ac46f19dcc1c0995c
 
 COCOAPODS: 1.7.5

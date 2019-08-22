@@ -11,6 +11,8 @@ import MetalScope
 import AVFoundation
 
 class VRViewController: UIViewController {
+    private var currentView: StereoView?
+    private var nextView: StereoView?
     private var timer: Timer!
     
     lazy var device: MTLDevice = {
@@ -20,27 +22,40 @@ class VRViewController: UIViewController {
         return device
     }()
     
-    weak var panoramaView: PanoramaView?
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVRView()
-        setupPredicator()
+        //        setupPredicator()
+    }
+    
+    fileprivate func foreseeingVRStereoView() {
+        let videoURL: URL = VRMovieQueue.shared.next()
+        let player = AVPlayer(url: videoURL)
+        let stereoView = StereoView(device: self.device, maximumTextureSize: self.view.bounds.size)
+        stereoView.load(player, format: .stereoOverUnder)
+        player.play()
+        self.nextView = stereoView
+    }
+    
+    fileprivate func teleportation() {
+        if let currentView = self.currentView {
+            currentView.removeFromSuperview()
+        }
+        if let nextView = self.nextView {
+            self.view.addSubview(nextView)
+            self.currentView = nextView
+            self.foreseeingVRStereoView()
+        }
     }
     
     fileprivate func setupVRView() {
-        let videoPath = Bundle.main.path(forResource: "resource/sample", ofType: "mp4")
-        let videoURL: URL = URL(fileURLWithPath: videoPath!)
-        let player = AVPlayer(url: videoURL)
-        
-        let panoramaView = PanoramaView(frame: view.bounds, device: self.device)
-        panoramaView.load(player, format: .stereoOverUnder)
-        player.play()
-        self.view.addSubview(panoramaView)
+        VRMovieQueue.shared.queuing()
+        self.foreseeingVRStereoView()
+        self.teleportation()
     }
     
     fileprivate func setupPredicator() {
@@ -57,9 +72,12 @@ class VRViewController: UIViewController {
     @objc private func soundCallback(_ timer: Timer) {
         if AudioListener.shared.audioEngine.isRunning {
             let label = PredictionAPI.request.build(
-                    soundsArray: AudioListener.shared.audioBuffer.array()
+                soundsArray: AudioListener.shared.audioBuffer.array()
                 ).send()
             print(label)
+            if label == "finger" {
+                teleportation()
+            }
         }
     }
     
