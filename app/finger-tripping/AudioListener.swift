@@ -11,18 +11,13 @@ import UIKit
 
 class AudioListener {
     
-    static let shared = AudioListener()
+//    static let shared = AudioListener()
     var audioEngine: AVAudioEngine!
-    var audioInputNode : AVAudioInputNode!
+    var audioInputNode: AVAudioInputNode!
     var audioBuffer: AVAudioPCMBuffer!
     var sessionActive = false
     
-    private init() {
-        start()
-        if sessionActive {
-            installTap()
-        }
-    }
+    init() {}
     
     private func installTap(){
         audioEngine = AVAudioEngine()
@@ -46,7 +41,7 @@ class AudioListener {
         try! audioEngine.start()
     }
     
-    func start(){
+    func start() {
         let audioSession = AVAudioSession.sharedInstance()
         let preferredSampleRate = 44100.0 /// Targeted default hardware rate
         let preferredIOBufferDuration = 0.1 /// 1024 / 44100 = 0.02
@@ -61,6 +56,10 @@ class AudioListener {
             sessionActive = true
         } catch let error {
             print("Audio session error: \(error)")
+        }
+        
+        if sessionActive {
+            installTap()
         }
     }
     

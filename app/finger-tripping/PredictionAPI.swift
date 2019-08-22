@@ -14,7 +14,7 @@ class PredictionAPI {
     
     private var grpcClient: Prediction_PredictionServiceServiceClient
     private var chunkRequests: [Prediction_PredictRequest]
-    private var predicatedlabel: SoundLabel = "none"
+    private var predictedlabel: SoundLabel = "none"
     
     private init() {
         self.grpcClient = Prediction_PredictionServiceServiceClient(
@@ -48,13 +48,13 @@ class PredictionAPI {
             
             try stream.closeAndReceive() { res in
                 if let result = res.result {
-                    self.predicatedlabel = result.label
+                    self.predictedlabel = result.label
                 }
             }
         } catch {
             print("Prediction Request Failed: \(error)")
         }
-        return self.predicatedlabel
+        return self.predictedlabel
     }
 }
 
