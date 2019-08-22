@@ -17,7 +17,7 @@
 		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF962942230988480079D6E0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF962941230988480079D6E0 /* Array+.swift */; };
 		FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */; };
-		FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* VRViewController.swift */; };
+		FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFBEAE23032C56008A34E9 /* ViewController.swift */; };
 		FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB023032C56008A34E9 /* Main.storyboard */; };
 		FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB323032C58008A34E9 /* Assets.xcassets */; };
 		FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */; };
@@ -37,7 +37,7 @@
 		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFAFBEAE23032C56008A34E9 /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
+		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFAFBEB123032C56008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFAFBEB323032C58008A34E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAFBEB623032C58008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FF962941230988480079D6E0 /* Array+.swift */,
-				FFAFBEAE23032C56008A34E9 /* VRViewController.swift */,
+				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
 				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
 				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
 				FFAFBEB323032C58008A34E9 /* Assets.xcassets */,
@@ -234,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */,
-				FFAFBEAF23032C56008A34E9 /* VRViewController.swift in Sources */,
+				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
 				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
 				DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */,
 				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
