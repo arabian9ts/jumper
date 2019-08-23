@@ -12,6 +12,8 @@
 		DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */; };
 		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
+		FF28622123102A3E008903D0 /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28621F23102A3E008903D0 /* PlayListCell.swift */; };
+		FF28622223102A3E008903D0 /* PlayListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28622023102A3E008903D0 /* PlayListCell.xib */; };
 		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
 		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF8DF21C230EA58F005436BA /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF21B230EA58F005436BA /* VRViewController.swift */; };
@@ -31,6 +33,8 @@
 		DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioBuffer+Array.swift"; sourceTree = "<group>"; };
 		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
+		FF28621F23102A3E008903D0 /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
+		FF28622023102A3E008903D0 /* PlayListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListCell.xib; sourceTree = "<group>"; };
 		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
 		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF8DF21B230EA58F005436BA /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */,
 				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
 				FF8DF21B230EA58F005436BA /* VRViewController.swift */,
+				FF28621F23102A3E008903D0 /* PlayListCell.swift */,
+				FF28622023102A3E008903D0 /* PlayListCell.xib */,
 			);
 			path = jumper;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */,
 				FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */,
 				FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */,
+				FF28622223102A3E008903D0 /* PlayListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF28622123102A3E008903D0 /* PlayListCell.swift in Sources */,
 				FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */,
 				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
 				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
@@ -401,7 +409,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/finger-tripping",
 				);
-				INFOPLIST_FILE = "finger-tripping/Info.plist";
+				INFOPLIST_FILE = jumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,7 +437,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/finger-tripping",
 				);
-				INFOPLIST_FILE = "finger-tripping/Info.plist";
+				INFOPLIST_FILE = jumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
