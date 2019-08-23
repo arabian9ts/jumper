@@ -13,7 +13,6 @@
 		DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5272304A95F00720323 /* prediction.grpc.swift */; };
 		DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF8E5282304A95F00720323 /* prediction.pb.swift */; };
 		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
-		FF438FF9230AC46F00522246 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = FF438FF8230AC46F00522246 /* resource */; };
 		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF8DF21C230EA58F005436BA /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF21B230EA58F005436BA /* VRViewController.swift */; };
 		FF962942230988480079D6E0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF962941230988480079D6E0 /* Array+.swift */; };
@@ -33,7 +32,6 @@
 		DAF8E5272304A95F00720323 /* prediction.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.grpc.swift; sourceTree = "<group>"; };
 		DAF8E5282304A95F00720323 /* prediction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction.pb.swift; sourceTree = "<group>"; };
 		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
-		FF438FF8230AC46F00522246 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resource; sourceTree = "<group>"; };
 		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF8DF21B230EA58F005436BA /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		FFAFBEAB23032C56008A34E9 /* jumper */ = {
 			isa = PBXGroup;
 			children = (
-				FF438FF8230AC46F00522246 /* resource */,
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
 				FF962941230988480079D6E0 /* Array+.swift */,
@@ -184,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF438FF9230AC46F00522246 /* resource in Resources */,
 				FFAFBEB723032C58008A34E9 /* LaunchScreen.storyboard in Resources */,
 				FFAFBEB423032C58008A34E9 /* Assets.xcassets in Resources */,
 				FFAFBEB223032C56008A34E9 /* Main.storyboard in Resources */,
