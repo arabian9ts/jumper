@@ -32,14 +32,26 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var tripButton: UIButton! {
+        didSet {
+            self.tripButton.layer.borderWidth = 2.0
+            self.tripButton.layer.borderColor = #colorLiteral(red: 0.3397541344, green: 0.1627097428, blue: 1, alpha: 1)
+            self.tripButton.layer.cornerRadius = 10.0
+        }
+    }
+    
+    private var playlistNameView: UILabel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPlaylistCoverView()
-        setupPlaylistContentsView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        setupPlaylistCoverView()
+        setupPlaylistContentsView()
         setupParallaxOffset()
+        setupContentsViewLayout()
+        setupPlaylistNameView()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -47,20 +59,23 @@ class ViewController: UIViewController {
     }
     
     private func setupPlaylistCoverView() {
+        let coverViewSize = self.playlistContentsView.bounds.size
+        let coverWidth = coverViewSize.width * 0.7
+        let coverHeight = coverViewSize.height * 0.4
+        self.playlistCoverView.itemSize = CGSize(width: coverWidth, height: coverHeight)
         self.playlistCoverView.delegate = self
         self.playlistCoverView.dataSource = self
         self.playlistCoverView.isInfinite = true
-        self.playlistCoverView.itemSize = CGSize(width: 240, height: 160)
-        self.playlistCoverView.interitemSpacing = 16
+        self.playlistCoverView.interitemSpacing = coverWidth / 2
         self.playlistCoverView.transformer = FSPagerViewTransformer(type: .coverFlow)
     }
     
-    fileprivate func setupPlaylistContentsView() {
+    private func setupPlaylistContentsView() {
         self.playlistContentsView.delegate = self
         self.playlistContentsView.dataSource = self
     }
     
-    func presentStereoView() {
+    private func presentStereoView() {
         let introView = UILabel()
         introView.text = "Place your phone into your Cardboard viewer."
         introView.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -72,7 +87,7 @@ class ViewController: UIViewController {
         present(vrViewController, animated: true, completion: nil)
     }
     
-    func setupParallaxOffset() {
+    private func setupParallaxOffset() {
         for index in self.playlistContentsView.indexPathsForVisibleRows! {
             let contentCell = self.playlistContentsView.cellForRow(at: index) as? PlaylistContentsViewCell
             guard let cell = contentCell else { continue }
@@ -84,6 +99,23 @@ class ViewController: UIViewController {
             imageRect.origin.y = percentage * 60 * -1
             cell.contentImageView.frame = imageRect
         }
+    }
+    
+    private func setupContentsViewLayout() {
+        self.playlistContentsView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        self.playlistContentsView.setContentOffset(CGPoint(x: 0, y: -20), animated: false)
+    }
+    
+    private func setupPlaylistNameView() {
+        let coverSize = self.playlistCoverView.bounds.size
+        let playlistNameView = UILabel(frame: CGRect(x: 50, y: coverSize.height - 50, width: coverSize.width - 100, height: 30))
+        playlistNameView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        playlistNameView.alpha = 0
+        playlistNameView.layer.masksToBounds = true
+        playlistNameView.layer.cornerRadius = 15
+        playlistNameView.textAlignment = .center
+        playlistNameView.text = "大都会巡回シリーズ"
+        self.playlistNameView = playlistNameView
     }
 }
 
@@ -109,6 +141,26 @@ extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         pagerView.deselectItem(at: index, animated: true)
         pagerView.scrollToItem(at: index, animated: true)
+    }
+    
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        guard let playlistNameView = self.playlistNameView else { return }
+        UIView.transition(
+            with: self.playlistCoverView,
+            duration: 0.5,
+            animations: {
+                playlistNameView.alpha = 0.0
+                playlistNameView.removeFromSuperview()},
+            completion: { _ in
+                UIView.transition(
+                    with: self.playlistCoverView,
+                    duration: 0.5,
+                    animations: {
+                        playlistNameView.alpha = 0.75
+                        self.playlistCoverView.addSubview(playlistNameView)}
+                )
+            }
+        )
     }
 }
 
@@ -142,7 +194,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
-        return (screenWidth * 0.8) / 2
+        return (screenWidth * 0.5) / 2
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

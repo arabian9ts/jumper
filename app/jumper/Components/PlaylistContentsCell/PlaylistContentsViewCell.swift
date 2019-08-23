@@ -26,7 +26,7 @@ class PlaylistContentsViewCell: UITableViewCell {
         }
         set (newFrame) {
             var frame = newFrame
-            let newWidth = frame.width * 0.90
+            let newWidth = frame.width * 0.95
             let space = (frame.width - newWidth) / 2
             frame.size.width = newWidth
             frame.origin.x += space
