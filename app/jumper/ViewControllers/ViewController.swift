@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func tripButtonTapped(_ sender: UIButton) {
+        presentStereoView()
+    }
+    
     private var playlistNameView: UILabel?
     
     override func viewDidLoad() {
@@ -56,6 +60,18 @@ class ViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override var shouldAutorotate: Bool {
+        get {
+            return false
+        }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
     }
     
     private func setupPlaylistCoverView() {

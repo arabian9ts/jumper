@@ -15,6 +15,7 @@
 		FF28622C23105576008903D0 /* PlaylistContentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28622A23105576008903D0 /* PlaylistContentsViewCell.swift */; };
 		FF28622D23105576008903D0 /* PlaylistContentsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28622B23105576008903D0 /* PlaylistContentsViewCell.xib */; };
 		FF28622F2310806C008903D0 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28622E2310806C008903D0 /* UIView+Border.swift */; };
+		FF2862322310A182008903D0 /* NavigationController+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2862312310A182008903D0 /* NavigationController+Rotate.swift */; };
 		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
 		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF8DF21C230EA58F005436BA /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF21B230EA58F005436BA /* VRViewController.swift */; };
@@ -39,6 +40,7 @@
 		FF28622A23105576008903D0 /* PlaylistContentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistContentsViewCell.swift; sourceTree = "<group>"; };
 		FF28622B23105576008903D0 /* PlaylistContentsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistContentsViewCell.xib; sourceTree = "<group>"; };
 		FF28622E2310806C008903D0 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		FF2862312310A182008903D0 /* NavigationController+Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Rotate.swift"; sourceTree = "<group>"; };
 		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
 		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF8DF21B230EA58F005436BA /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				FF962941230988480079D6E0 /* Array+.swift */,
 				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
 				FF28622E2310806C008903D0 /* UIView+Border.swift */,
+				FF2862312310A182008903D0 /* NavigationController+Rotate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				FF28622F2310806C008903D0 /* UIView+Border.swift in Sources */,
 				FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */,
 				DA13CA2823046DE8004EF6BE /* AudioListener.swift in Sources */,
+				FF2862322310A182008903D0 /* NavigationController+Rotate.swift in Sources */,
 				FF962942230988480079D6E0 /* Array+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

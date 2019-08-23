@@ -26,6 +26,13 @@ class VRViewController: StereoViewController {
         teleportation()
         setupPredicator()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.audioListener?.stop()
+        self.timer.invalidate()
+    }
 
     fileprivate func foreseeingVRStereoView() {
         let url = VRMovieQueue.shared.next()
