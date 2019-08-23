@@ -1,4 +1,4 @@
-PROTO_DIR_CLIENT = app/finger-tripping/grpc
+PROTO_DIR_CLIENT = app/jumper/grpc
 
 .PHONY: protoc
 protoc:
