@@ -10,7 +10,10 @@ import UIKit
 
 class PlaylistContentsViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
+    
+    private var contentURL: URL!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +37,11 @@ class PlaylistContentsViewCell: UITableViewCell {
         }
     }
 
-    func setupCell() {
-        let coverImage = UIImage(named: "nature")
-        guard let image = coverImage else {
-            return
-        }
+    func setupCell(title: String, image: UIImage, contentURL: URL) {
+        self.titleLabel.text = title
+        self.contentImageView.image = image
+        self.contentURL = contentURL
+        
         filterWithDark(image: image)
     }
     

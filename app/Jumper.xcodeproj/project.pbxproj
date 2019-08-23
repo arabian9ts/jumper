@@ -16,6 +16,9 @@
 		FF28622D23105576008903D0 /* PlaylistContentsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF28622B23105576008903D0 /* PlaylistContentsViewCell.xib */; };
 		FF28622F2310806C008903D0 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28622E2310806C008903D0 /* UIView+Border.swift */; };
 		FF2862322310A182008903D0 /* NavigationController+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2862312310A182008903D0 /* NavigationController+Rotate.swift */; };
+		FF2862352310A301008903D0 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2862342310A301008903D0 /* Playlist.swift */; };
+		FF2862372310A38A008903D0 /* VRContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2862362310A38A008903D0 /* VRContent.swift */; };
+		FF2862392310A6CF008903D0 /* PlaylistMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2862382310A6CF008903D0 /* PlaylistMock.swift */; };
 		FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */; };
 		FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */; };
 		FF8DF21C230EA58F005436BA /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8DF21B230EA58F005436BA /* VRViewController.swift */; };
@@ -41,6 +44,9 @@
 		FF28622B23105576008903D0 /* PlaylistContentsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistContentsViewCell.xib; sourceTree = "<group>"; };
 		FF28622E2310806C008903D0 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		FF2862312310A182008903D0 /* NavigationController+Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Rotate.swift"; sourceTree = "<group>"; };
+		FF2862342310A301008903D0 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		FF2862362310A38A008903D0 /* VRContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRContent.swift; sourceTree = "<group>"; };
+		FF2862382310A6CF008903D0 /* PlaylistMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistMock.swift; sourceTree = "<group>"; };
 		FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionAPI.swift; sourceTree = "<group>"; };
 		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF8DF21B230EA58F005436BA /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 			children = (
 				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
 				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
+				FF2862382310A6CF008903D0 /* PlaylistMock.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -156,6 +163,15 @@
 			path = PlaylistContentsCell;
 			sourceTree = "<group>";
 		};
+		FF2862332310A2F2008903D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF2862342310A301008903D0 /* Playlist.swift */,
+				FF2862362310A38A008903D0 /* VRContent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FFAFBEA023032C56008A34E9 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +193,7 @@
 		FFAFBEAB23032C56008A34E9 /* jumper */ = {
 			isa = PBXGroup;
 			children = (
+				FF2862332310A2F2008903D0 /* Models */,
 				FF28622823104971008903D0 /* Storyboards */,
 				FF2862272310495E008903D0 /* Components */,
 				FF28622623104948008903D0 /* ViewControllers */,
@@ -308,10 +325,13 @@
 				FF28622C23105576008903D0 /* PlaylistContentsViewCell.swift in Sources */,
 				FF8DF1FC230DA269005436BA /* VRMovieQueue.swift in Sources */,
 				FFAFBEAF23032C56008A34E9 /* ViewController.swift in Sources */,
+				FF2862372310A38A008903D0 /* VRContent.swift in Sources */,
+				FF2862352310A301008903D0 /* Playlist.swift in Sources */,
 				DAF8E5292304A95F00720323 /* prediction.grpc.swift in Sources */,
 				DAF8E52A2304A95F00720323 /* prediction.pb.swift in Sources */,
 				FF8DF21C230EA58F005436BA /* VRViewController.swift in Sources */,
 				DA13CA2A23047177004EF6BE /* AVAudioBuffer+Array.swift in Sources */,
+				FF2862392310A6CF008903D0 /* PlaylistMock.swift in Sources */,
 				FFAFBEAD23032C56008A34E9 /* AppDelegate.swift in Sources */,
 				FF28622F2310806C008903D0 /* UIView+Border.swift in Sources */,
 				FF2B6E78230AE5AC008C40BC /* PredictionAPI.swift in Sources */,

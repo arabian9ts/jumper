@@ -118,7 +118,7 @@ class ViewController: UIViewController {
     }
     
     private func setupContentsViewLayout() {
-        self.playlistContentsView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        self.playlistContentsView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
         self.playlistContentsView.setContentOffset(CGPoint(x: 0, y: -20), animated: false)
     }
     
@@ -130,24 +130,23 @@ class ViewController: UIViewController {
         playlistNameView.layer.masksToBounds = true
         playlistNameView.layer.cornerRadius = 15
         playlistNameView.textAlignment = .center
-        playlistNameView.text = "大都会巡回シリーズ"
+        playlistNameView.text = PlaylistMock.shared.playlists[0].title
         self.playlistNameView = playlistNameView
     }
 }
 
 extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 10
+        return PlaylistMock.shared.playlists.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "CoverCell", at: index)
-//        let coverflow = coverflowContents[index]
-        
         cell.contentView.layer.shadowOpacity = 0.4
         cell.contentView.layer.opacity = 0.86
         
-        cell.imageView?.image = UIImage(named: "urban")
+        let playlist = PlaylistMock.shared.playlists[index]
+        cell.imageView?.image = playlist.thumbnail
         cell.imageView?.contentMode = .scaleAspectFill
         cell.imageView?.clipsToBounds = true
         
@@ -161,6 +160,7 @@ extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         guard let playlistNameView = self.playlistNameView else { return }
+        
         UIView.transition(
             with: self.playlistCoverView,
             duration: 0.5,
@@ -204,7 +204,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistContentsViewCell", for: indexPath) as! PlaylistContentsViewCell
-        cell.setupCell()
+        let playlistIndex = self.playlistCoverView.currentIndex
+        let content = PlaylistMock.shared.playlists[playlistIndex].contents[indexPath.row]
+        if let title = content?.title, let image = content?.thumbnail, let url = content?.url {
+            cell.setupCell(title: title, image: image, contentURL: url)
+        }
         return cell
     }
     
