@@ -8,12 +8,15 @@
 
 import UIKit
 import SceneKit
-import MetalScope
-import AVFoundation
+import FSPagerView
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var playListCollection: UICollectionView!
+    @IBOutlet weak var playlistCoverView: FSPagerView! {
+        didSet {
+            self.playlistCoverView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "CoverCell")
+        }
+    }
     
     lazy var device: MTLDevice = {
         guard let device = MTLCreateSystemDefaultDevice() else {
@@ -22,45 +25,39 @@ class ViewController: UIViewController {
         return device
     }()
     
+    @IBOutlet weak var playlistContentsView: UITableView! {
+        didSet {
+            let nib = UINib(nibName: "PlaylistContentsViewCell", bundle: Bundle.main)
+            self.playlistContentsView.register(nib, forCellReuseIdentifier: "PlaylistContentsViewCell")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupVRView()
-        //        setupPredicator()
-        setupPlayListCollection()
+        setupPlaylistCoverView()
+        setupPlaylistContentsView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        presentStereoView()
+        setupParallaxOffset()
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    fileprivate func setupPlayListCollection() {
-        self.playListCollection.delegate = self
-        self.playListCollection.dataSource = self
-        let nib = UINib(nibName: "PlayListCell", bundle: Bundle.main)
-        self.playListCollection.register(nib, forCellWithReuseIdentifier: "PlayListCell")
-        
-        let layout = UICollectionViewFlowLayout()
-        let width: CGFloat = UIScreen.main.bounds.width * 2 / 5
-        let height = width + 20
-        layout.itemSize = CGSize(width: width, height: height)
-        
-        let space = width / 3
-        print(space)
-        layout.sectionInset = UIEdgeInsets(top: space / 2, left: space / 2, bottom: space, right: space / 2)
-        layout.minimumLineSpacing = space / 2
-        layout.minimumInteritemSpacing = 0
-        
-        self.playListCollection.collectionViewLayout = layout
+    private func setupPlaylistCoverView() {
+        self.playlistCoverView.delegate = self
+        self.playlistCoverView.dataSource = self
+        self.playlistCoverView.isInfinite = true
+        self.playlistCoverView.itemSize = CGSize(width: 240, height: 160)
+        self.playlistCoverView.interitemSpacing = 16
+        self.playlistCoverView.transformer = FSPagerViewTransformer(type: .coverFlow)
     }
     
-    fileprivate func setupVRView() {
-        VRMovieQueue.shared.queuing()
-        //        self.foreseeingVRStereoView()
-        //        self.teleportation()
+    fileprivate func setupPlaylistContentsView() {
+        self.playlistContentsView.delegate = self
+        self.playlistContentsView.dataSource = self
     }
     
     func presentStereoView() {
@@ -74,23 +71,68 @@ class ViewController: UIViewController {
         vrViewController.introductionView = introView
         present(vrViewController, animated: true, completion: nil)
     }
+    
+    func setupParallaxOffset() {
+        for index in self.playlistContentsView.indexPathsForVisibleRows! {
+            let cell = self.playlistContentsView.cellForRow(at: index) as! PlaylistContentsViewCell
+            let rect = self.playlistContentsView.rectForRow(at: index)
+            let rectInTable = self.playlistContentsView.convert(rect, to: self.playlistContentsView.superview)
+            let offset = rectInTable.origin.y + rectInTable.height / 2
+            let percentage = offset / self.playlistContentsView.bounds.height
+            var imageRect = cell.contentImageView.frame
+            imageRect.origin.y = percentage * 60 * -1
+            cell.contentImageView.frame = imageRect
+        }
+    }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
         return 10
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayListCell", for: indexPath)
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "CoverCell", at: index)
+//        let coverflow = coverflowContents[index]
+        
+        cell.contentView.layer.shadowOpacity = 0.4
+        cell.contentView.layer.opacity = 0.86
+        
+        cell.imageView?.image = UIImage(named: "urban")
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.clipsToBounds = true
+        
         return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: true)
+        pagerView.scrollToItem(at: index, animated: true)
     }
 }
 
-//extension ViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width: CGFloat = UIScreen.main.bounds.width / 3
-//        let height = width
-//        return CGSize(width: width, height: height)
-//    }
-//}
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistContentsViewCell", for: indexPath) as! PlaylistContentsViewCell
+        cell.setupCell()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let screenWidth = UIScreen.main.bounds.size.width
+        return (screenWidth * 0.9) / 2
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        setupParallaxOffset()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected")
+        print(indexPath.section)
+    }
+}

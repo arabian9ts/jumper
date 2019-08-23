@@ -21,6 +21,7 @@ class VRViewController: StereoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        VRMovieQueue.shared.queuing()
         foreseeingVRStereoView()
         teleportation()
         setupPredicator()

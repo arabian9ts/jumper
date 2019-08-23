@@ -5,6 +5,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - FSPagerView (0.8.3)
   - gRPC-Core (1.19.0):
     - gRPC-Core/Implementation (= 1.19.0)
     - gRPC-Core/Interface (= 1.19.0)
@@ -25,12 +26,14 @@ PODS:
   - SwiftProtobuf (1.5.0)
 
 DEPENDENCIES:
+  - FSPagerView
   - MetalScope (from `https://github.com/turk-jk/MetalScope`)
   - SwiftGRPC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL-GRPC
+    - FSPagerView
     - gRPC-Core
     - nanopb
     - SwiftGRPC
@@ -47,12 +50,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   gRPC-Core: bd9472c8daa2e414b9f8038ba667bf56ce0e02b8
   MetalScope: 086184b8bcfb0eff773a68cd3aaf53d52bf239c3
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftGRPC: 43d3e8db88f97e7386bd44f159ecdfad02ce3362
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
 
-PODFILE CHECKSUM: 63048397e5ccc2db59c9be2ac46f19dcc1c0995c
+PODFILE CHECKSUM: e64b94d76ea405f51325d5c814202b650d9677a4
 
 COCOAPODS: 1.7.5

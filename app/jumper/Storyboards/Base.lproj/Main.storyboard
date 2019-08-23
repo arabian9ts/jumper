@@ -28,41 +28,54 @@
                                     <navigationItem title="プレイリスト" id="FLR-OU-6dt"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-wU-Dha">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sbc-U1-Ogo">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Y0g-NF-LEc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TcJ-0x-bxb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDK-It-xAP" customClass="FSPagerView" customModule="FSPagerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jDK-It-xAP" secondAttribute="height" multiplier="2:1" id="40f-aN-caq"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プレイリスト名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-pK-LQ9">
+                                        <rect key="frame" x="0.0" y="207" width="414" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fDR-Tv-htx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-5H-Zy6">
+                                        <rect key="frame" x="0.0" y="247" width="414" height="461"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B53-B6-oi3">
+                                        <rect key="frame" x="0.0" y="708" width="414" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="B53-B6-oi3" secondAttribute="height" multiplier="414:100" id="ovQ-Uo-lxf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0OT-wU-Dha" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4HT-wE-jCS"/>
-                            <constraint firstItem="0OT-wU-Dha" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jvc-SO-ito"/>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3UI-Da-Jmh"/>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="top" secondItem="kxf-PK-kQa" secondAttribute="bottom" id="9Gu-35-JiE"/>
                             <constraint firstItem="kxf-PK-kQa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PUa-3b-yyY"/>
                             <constraint firstItem="kxf-PK-kQa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eFl-G1-XkI"/>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mDK-q6-7yh"/>
                             <constraint firstItem="kxf-PK-kQa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mqU-io-hQ9"/>
-                            <constraint firstItem="0OT-wU-Dha" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ndS-D1-nZ3"/>
-                            <constraint firstItem="0OT-wU-Dha" firstAttribute="top" secondItem="kxf-PK-kQa" secondAttribute="bottom" id="s9g-gI-LLo"/>
+                            <constraint firstAttribute="bottom" secondItem="TcJ-0x-bxb" secondAttribute="bottom" id="tDP-Tg-zEt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="playListCollection" destination="0OT-wU-Dha" id="4fu-r4-BjW"/>
+                        <outlet property="playlistContentsView" destination="eD1-5H-Zy6" id="JMH-VX-yr2"/>
+                        <outlet property="playlistCoverView" destination="jDK-It-xAP" id="exK-O1-cQD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
