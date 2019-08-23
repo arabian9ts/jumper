@@ -20,26 +20,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-uQ-dXP">
-                        <rect key="frame" x="0.0" y="10" width="414" height="186.5"/>
+                        <rect key="frame" x="5" y="5" width="404" height="196.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nature" translatesAutoresizingMaskIntoConstraints="NO" id="Pcc-ln-eGd">
-                                <rect key="frame" x="0.0" y="-50" width="414" height="286.5"/>
+                                <rect key="frame" x="0.0" y="-50" width="404" height="296.5"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yakiyama Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-1z-sia">
+                                <rect key="frame" x="0.0" y="73.5" width="404" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RLo-sJ-1tj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pcc-ln-eGd" firstAttribute="top" secondItem="tqs-uQ-dXP" secondAttribute="top" constant="-50" id="5eB-1t-NHv"/>
+                            <constraint firstItem="qUG-1z-sia" firstAttribute="centerY" secondItem="tqs-uQ-dXP" secondAttribute="centerY" id="WSy-a6-0MQ"/>
                             <constraint firstAttribute="trailing" secondItem="Pcc-ln-eGd" secondAttribute="trailing" id="dVE-w0-oW4"/>
                             <constraint firstItem="Pcc-ln-eGd" firstAttribute="leading" secondItem="tqs-uQ-dXP" secondAttribute="leading" id="fJQ-SY-P4a"/>
+                            <constraint firstAttribute="trailing" secondItem="qUG-1z-sia" secondAttribute="trailing" id="huo-WH-txr"/>
+                            <constraint firstItem="qUG-1z-sia" firstAttribute="leading" secondItem="tqs-uQ-dXP" secondAttribute="leading" id="qjc-H6-e7e"/>
                             <constraint firstAttribute="bottom" secondItem="Pcc-ln-eGd" secondAttribute="bottom" constant="-50" id="voy-QD-4zv"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="tqs-uQ-dXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PrZ-fy-LyO"/>
-                    <constraint firstItem="tqs-uQ-dXP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WUR-Jd-Xax"/>
-                    <constraint firstAttribute="bottom" secondItem="tqs-uQ-dXP" secondAttribute="bottom" constant="10" id="lG0-mg-Wl0"/>
-                    <constraint firstAttribute="trailing" secondItem="tqs-uQ-dXP" secondAttribute="trailing" id="mSC-mu-vSH"/>
+                    <constraint firstItem="tqs-uQ-dXP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="PrZ-fy-LyO"/>
+                    <constraint firstItem="tqs-uQ-dXP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="WUR-Jd-Xax"/>
+                    <constraint firstAttribute="bottom" secondItem="tqs-uQ-dXP" secondAttribute="bottom" constant="5" id="lG0-mg-Wl0"/>
+                    <constraint firstAttribute="trailing" secondItem="tqs-uQ-dXP" secondAttribute="trailing" constant="5" id="mSC-mu-vSH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

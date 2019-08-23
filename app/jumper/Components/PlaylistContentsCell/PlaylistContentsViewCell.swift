@@ -11,7 +11,6 @@ import UIKit
 class PlaylistContentsViewCell: UITableViewCell {
 
     @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var parallaxTopOffset: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +39,10 @@ class PlaylistContentsViewCell: UITableViewCell {
         guard let image = coverImage else {
             return
         }
-
+        filterWithDark(image: image)
+    }
+    
+    private func filterWithDark(image: UIImage) {
         let frame = CGRect(origin:CGPoint(x: 0, y: 0), size: image.size)
         let tempView = UIView(frame: frame)
         tempView.backgroundColor = UIColor.black

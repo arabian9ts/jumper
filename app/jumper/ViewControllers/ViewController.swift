@@ -74,7 +74,8 @@ class ViewController: UIViewController {
     
     func setupParallaxOffset() {
         for index in self.playlistContentsView.indexPathsForVisibleRows! {
-            let cell = self.playlistContentsView.cellForRow(at: index) as! PlaylistContentsViewCell
+            let contentCell = self.playlistContentsView.cellForRow(at: index) as? PlaylistContentsViewCell
+            guard let cell = contentCell else { continue }
             let rect = self.playlistContentsView.rectForRow(at: index)
             let rectInTable = self.playlistContentsView.convert(rect, to: self.playlistContentsView.superview)
             let offset = rectInTable.origin.y + rectInTable.height / 2
@@ -113,7 +114,24 @@ extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .clear
+    }
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = .clear
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -124,7 +142,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let screenWidth = UIScreen.main.bounds.size.width
-        return (screenWidth * 0.9) / 2
+        return (screenWidth * 0.8) / 2
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
