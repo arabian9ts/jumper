@@ -37,7 +37,7 @@
 		FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRMovieQueue.swift; sourceTree = "<group>"; };
 		FF8DF21B230EA58F005436BA /* VRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		FF962941230988480079D6E0 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
-		FFAFBEA923032C56008A34E9 /* finger-tripping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finger-tripping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFAFBEA923032C56008A34E9 /* Jumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAFBEAE23032C56008A34E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFAFBEB123032C56008A34E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		FFAFBEA023032C56008A34E9 = {
 			isa = PBXGroup;
 			children = (
-				FFAFBEAB23032C56008A34E9 /* finger-tripping */,
+				FFAFBEAB23032C56008A34E9 /* jumper */,
 				FFAFBEAA23032C56008A34E9 /* Products */,
 				9B1D4E97DCE3D4DC74D07C0E /* Pods */,
 				28F33C78C4380885026AD051 /* Frameworks */,
@@ -97,12 +97,12 @@
 		FFAFBEAA23032C56008A34E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFAFBEA923032C56008A34E9 /* finger-tripping.app */,
+				FFAFBEA923032C56008A34E9 /* Jumper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FFAFBEAB23032C56008A34E9 /* finger-tripping */ = {
+		FFAFBEAB23032C56008A34E9 /* jumper */ = {
 			isa = PBXGroup;
 			children = (
 				FF438FF8230AC46F00522246 /* resource */,
@@ -120,15 +120,15 @@
 				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
 				FF8DF21B230EA58F005436BA /* VRViewController.swift */,
 			);
-			path = "finger-tripping";
+			path = jumper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFAFBEA823032C56008A34E9 /* finger-tripping */ = {
+		FFAFBEA823032C56008A34E9 /* Jumper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFAFBEBB23032C58008A34E9 /* Build configuration list for PBXNativeTarget "finger-tripping" */;
+			buildConfigurationList = FFAFBEBB23032C58008A34E9 /* Build configuration list for PBXNativeTarget "Jumper" */;
 			buildPhases = (
 				D5B93C61A0170510492C8239 /* [CP] Check Pods Manifest.lock */,
 				FFAFBEA523032C56008A34E9 /* Sources */,
@@ -140,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = "finger-tripping";
+			name = Jumper;
 			productName = "finger-tripping";
-			productReference = FFAFBEA923032C56008A34E9 /* finger-tripping.app */;
+			productReference = FFAFBEA923032C56008A34E9 /* Jumper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +161,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FFAFBEA423032C56008A34E9 /* Build configuration list for PBXProject "finger-tripping" */;
+			buildConfigurationList = FFAFBEA423032C56008A34E9 /* Build configuration list for PBXProject "Jumper" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -174,7 +174,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FFAFBEA823032C56008A34E9 /* finger-tripping */,
+				FFAFBEA823032C56008A34E9 /* Jumper */,
 			);
 		};
 /* End PBXProject section */
@@ -410,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "arabian9ts.finger-tripping.finger-tripping";
+				PRODUCT_BUNDLE_IDENTIFIER = arabian9ts.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -438,7 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "arabian9ts.finger-tripping.finger-tripping";
+				PRODUCT_BUNDLE_IDENTIFIER = arabian9ts.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -451,7 +451,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FFAFBEA423032C56008A34E9 /* Build configuration list for PBXProject "finger-tripping" */ = {
+		FFAFBEA423032C56008A34E9 /* Build configuration list for PBXProject "Jumper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFAFBEB923032C58008A34E9 /* Debug */,
@@ -460,7 +460,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFAFBEBB23032C58008A34E9 /* Build configuration list for PBXNativeTarget "finger-tripping" */ = {
+		FFAFBEBB23032C58008A34E9 /* Build configuration list for PBXNativeTarget "Jumper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFAFBEBC23032C58008A34E9 /* Debug */,
