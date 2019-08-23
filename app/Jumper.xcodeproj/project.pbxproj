@@ -86,6 +86,58 @@
 			path = grpc;
 			sourceTree = "<group>";
 		};
+		FF286223231048F7008903D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF962941230988480079D6E0 /* Array+.swift */,
+				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF2862242310491A008903D0 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		FF28622523104926008903D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
+				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FF28622623104948008903D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
+				FF8DF21B230EA58F005436BA /* VRViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF2862272310495E008903D0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF28621F23102A3E008903D0 /* PlayListCell.swift */,
+				FF28622023102A3E008903D0 /* PlayListCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF28622823104971008903D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		FFAFBEA023032C56008A34E9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,21 +159,17 @@
 		FFAFBEAB23032C56008A34E9 /* jumper */ = {
 			isa = PBXGroup;
 			children = (
+				FF28622823104971008903D0 /* Storyboards */,
+				FF2862272310495E008903D0 /* Components */,
+				FF28622623104948008903D0 /* ViewControllers */,
+				FF28622523104926008903D0 /* Utils */,
+				FF2862242310491A008903D0 /* APIs */,
+				FF286223231048F7008903D0 /* Extensions */,
 				DAF8E5262304A95F00720323 /* grpc */,
 				FFAFBEAC23032C56008A34E9 /* AppDelegate.swift */,
-				FF962941230988480079D6E0 /* Array+.swift */,
-				FFAFBEAE23032C56008A34E9 /* ViewController.swift */,
-				DA13CA2923047177004EF6BE /* AVAudioBuffer+Array.swift */,
-				FFAFBEB023032C56008A34E9 /* Main.storyboard */,
 				FFAFBEB323032C58008A34E9 /* Assets.xcassets */,
 				FFAFBEB523032C58008A34E9 /* LaunchScreen.storyboard */,
 				FFAFBEB823032C58008A34E9 /* Info.plist */,
-				DA13CA2723046DE8004EF6BE /* AudioListener.swift */,
-				FF2B6E77230AE5AC008C40BC /* PredictionAPI.swift */,
-				FF8DF1FB230DA269005436BA /* VRMovieQueue.swift */,
-				FF8DF21B230EA58F005436BA /* VRViewController.swift */,
-				FF28621F23102A3E008903D0 /* PlayListCell.swift */,
-				FF28622023102A3E008903D0 /* PlayListCell.xib */,
 			);
 			path = jumper;
 			sourceTree = "<group>";
