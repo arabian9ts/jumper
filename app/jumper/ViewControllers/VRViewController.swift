@@ -16,13 +16,14 @@ class VRViewController: StereoViewController {
     var playerObservingToken: Any?
     var audioListener: AudioListener?
     
+    var playlist: Playlist?
+    
     private var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        VRMovieQueue.shared.queuing()
-        foreseeingVRStereoView()
+//        foreseeingVRStereoView()
         teleportation()
         setupPredicator()
     }
@@ -34,18 +35,30 @@ class VRViewController: StereoViewController {
         self.timer.invalidate()
     }
 
-    fileprivate func foreseeingVRStereoView() {
-        let url = VRMovieQueue.shared.next()
-        let playerItem = AVPlayerItem(url: url)
-        let player = AVQueuePlayer(playerItem: playerItem)
-        player.play()
-        self.player = player
-    }
+//    fileprivate func foreseeingVRStereoView() {
+//        if !self.playlist!.hasNext() {
+//            dismiss(animated: true, completion: nil)
+//        }
+//        guard let url = self.playlist!.next() else { return }
+//        print("change view")
+//        let playerItem = AVPlayerItem(url: url)
+//        let player = AVQueuePlayer(playerItem: playerItem)
+//        player.play()
+//        self.player = player
+//    }
     
     fileprivate func teleportation() {
-        if let player = self.player {
-            super.load(player, format: .stereoOverUnder)
+        if !self.playlist!.hasNext() {
+            dismiss(animated: true, completion: nil)
         }
+        guard let url = self.playlist!.next() else { return }
+        print("change view")
+        let playerItem = AVPlayerItem(url: url)
+        print(url)
+        let player = AVQueuePlayer(playerItem: playerItem)
+        player.play()
+        super.load(player, format: .stereoOverUnder)
+        self.player = player
     }
     
     fileprivate func setupPredicator() {
@@ -69,7 +82,7 @@ class VRViewController: StereoViewController {
                 ).send()
             print(label)
             if label == "finger" {
-                foreseeingVRStereoView()
+//                foreseeingVRStereoView()
                 teleportation()
             }
         }

@@ -31,13 +31,14 @@ class Playlist {
     }
     
     func hasNext() -> Bool {
-        return self.ptr + 1 < self.contents.count
+        return self.ptr < self.contents.count
     }
     
     func next() -> URL? {
         if hasNext() {
+            let url = self.contents[self.ptr]?.url
             self.ptr += 1
-            return self.contents[self.ptr]?.url
+            return url
         }
         else {
             return nil

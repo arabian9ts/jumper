@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tripButtonTapped(_ sender: UIButton) {
-        presentStereoView()
+        presentStereoView(from: 0)
     }
     
     private var playlistNameView: UILabel?
@@ -51,6 +51,8 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         setupPlaylistCoverView()
         setupPlaylistContentsView()
         setupParallaxOffset()
@@ -92,7 +94,7 @@ class ViewController: UIViewController {
         self.playlistContentsView.dataSource = self
     }
     
-    private func presentStereoView() {
+    private func presentStereoView(from: Int) {
         let introView = UILabel()
         introView.text = "Place your phone into your Cardboard viewer."
         introView.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -101,6 +103,14 @@ class ViewController: UIViewController {
         
         let vrViewController = VRViewController(device: device)
         vrViewController.introductionView = introView
+        
+        let playlistIndex = self.playlistCoverView.currentIndex
+        let playlist = PlaylistMock.shared.playlists[playlistIndex]
+        guard let title = playlist.title, let thumbnail = playlist.thumbnail else { return }
+        
+        let suffixSize = playlist.contents.count - from
+        let newContents = Array(playlist.contents.suffix(suffixSize)) as! [VRContent]
+        vrViewController.playlist = Playlist(title: title, thumbnail: thumbnail, contents: newContents)
         present(vrViewController, animated: true, completion: nil)
     }
     
@@ -113,14 +123,14 @@ class ViewController: UIViewController {
             let offset = rectInTable.origin.y + rectInTable.height / 2
             let percentage = offset / self.playlistContentsView.bounds.height
             var imageRect = cell.contentImageView.frame
-            imageRect.origin.y = percentage * 60 * -1
+            imageRect.origin.y = percentage * 65 * -1
             cell.contentImageView.frame = imageRect
         }
     }
     
     private func setupContentsViewLayout() {
         self.playlistContentsView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
-        self.playlistContentsView.setContentOffset(CGPoint(x: 0, y: -20), animated: false)
+        self.playlistContentsView.setContentOffset(CGPoint(x: 0, y: 5), animated: true)
     }
     
     private func setupPlaylistNameView() {
@@ -221,9 +231,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistContentsViewCell", for: indexPath) as! PlaylistContentsViewCell
         let playlistIndex = self.playlistCoverView.currentIndex
-        let content = PlaylistMock.shared.playlists[playlistIndex].contents[indexPath.row]
-        if let title = content?.title, let image = content?.thumbnail, let url = content?.url {
-            cell.setupCell(title: title, image: image, contentURL: url)
+        let content = PlaylistMock.shared.playlists[playlistIndex].contents[indexPath.section]
+        if let title = content?.title, let image = content?.thumbnail {
+            cell.setupCell(title: title, image: image)
         }
         return cell
     }
@@ -238,7 +248,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected")
-        print(indexPath.section)
+        presentStereoView(from: indexPath.section)
     }
 }
