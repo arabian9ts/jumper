@@ -45,7 +45,6 @@ class VRViewController: StereoViewController {
             dismiss(animated: true, completion: nil)
         }
         guard let url = self.playlist!.next() else { return }
-        print("change view")
         let playerItem = AVPlayerItem(url: url)
         let player = AVQueuePlayer(playerItem: playerItem)
         player.play()
