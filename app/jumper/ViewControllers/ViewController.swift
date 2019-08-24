@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         setupParallaxOffset()
         setupContentsViewLayout()
         setupPlaylistNameView()
+        setNewPlaylistNameView()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -123,15 +124,34 @@ class ViewController: UIViewController {
     }
     
     private func setupPlaylistNameView() {
+        let playlistNameView = newPlaylistNameView()
+        playlistNameView.text = PlaylistMock.shared.playlists[0].title
+        self.playlistNameView = playlistNameView
+    }
+    
+    private func newPlaylistNameView() -> UILabel {
         let coverSize = self.playlistCoverView.bounds.size
-        let playlistNameView = UILabel(frame: CGRect(x: 50, y: coverSize.height - 50, width: coverSize.width - 100, height: 30))
+        let playlistNameView = UILabel(frame: CGRect(x: 30, y: coverSize.height - 50, width: coverSize.width - 60, height: 30))
         playlistNameView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         playlistNameView.alpha = 0
         playlistNameView.layer.masksToBounds = true
         playlistNameView.layer.cornerRadius = 15
         playlistNameView.textAlignment = .center
-        playlistNameView.text = PlaylistMock.shared.playlists[0].title
+        return playlistNameView
+    }
+    
+    private func setNewPlaylistNameView() {
+        let playlistNameView = newPlaylistNameView()
+        let playlistIndex = self.playlistCoverView.currentIndex
+        playlistNameView.text = PlaylistMock.shared.playlists[playlistIndex].title
         self.playlistNameView = playlistNameView
+        UIView.transition(
+            with: self.playlistCoverView,
+            duration: 0.36,
+            animations: {
+                playlistNameView.alpha = 0.75
+                self.playlistCoverView.addSubview(playlistNameView)},
+            completion: nil)
     }
 }
 
@@ -158,25 +178,21 @@ extension ViewController: FSPagerViewDataSource, FSPagerViewDelegate {
         pagerView.scrollToItem(at: index, animated: true)
     }
     
-    func pagerViewDidScroll(_ pagerView: FSPagerView) {
-        guard let playlistNameView = self.playlistNameView else { return }
-        
-        UIView.transition(
-            with: self.playlistCoverView,
-            duration: 0.5,
-            animations: {
-                playlistNameView.alpha = 0.0
-                playlistNameView.removeFromSuperview()},
-            completion: { _ in
-                UIView.transition(
-                    with: self.playlistCoverView,
-                    duration: 0.5,
-                    animations: {
-                        playlistNameView.alpha = 0.75
-                        self.playlistCoverView.addSubview(playlistNameView)}
-                )
-            }
-        )
+    func pagerViewWillBeginDragging(_ pagerView: FSPagerView) {
+        if let playlistNameView = self.playlistNameView {
+            UIView.transition(
+                with: self.playlistCoverView,
+                duration: 0.36,
+                animations: {
+                    playlistNameView.alpha = 0.0
+                    playlistNameView.removeFromSuperview()},
+                completion: nil)
+        }
+    }
+    
+    func pagerViewDidEndDecelerating(_ pagerView: FSPagerView) {
+        setNewPlaylistNameView()
+        self.playlistContentsView.reloadData()
     }
 }
 
