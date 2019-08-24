@@ -215,7 +215,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        let playlistIndex = self.playlistCoverView.currentIndex
+        let playlist = PlaylistMock.shared.playlists[playlistIndex]
+        return playlist.contents.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

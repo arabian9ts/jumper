@@ -45,7 +45,7 @@ class PlaylistMock {
                 VRContent(
                     title: "Tokyo Night Fever",
                     thumbnail: UIImage(named: "horror")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
+                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/horror.mp4")!),
                 VRContent(
                     title: "Tokyo Night Fever",
                     thumbnail: UIImage(named: "horror2")!,
@@ -89,29 +89,29 @@ class PlaylistMock {
                     url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/sea_okinawa.mp4")!),
             ]),
         Playlist(
-            title: "自然に癒やされたいだけの人生だった",
-            thumbnail: UIImage(named: "nature")!,
+            title: "飲まなきゃやってらんない",
+            thumbnail: UIImage(named: "drink")!,
             contents: [
                 VRContent(
-                    title: "Tokyo Night Fever",
-                    thumbnail: UIImage(named: "urban")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
+                    title: "1次会",
+                    thumbnail: UIImage(named: "drink")!,
+                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/drink.mp4")!),
                 VRContent(
-                    title: "Tokyo Night Fever",
-                    thumbnail: UIImage(named: "urban")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
+                    title: "2次会",
+                    thumbnail: UIImage(named: "drink2")!,
+                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/drink2.mp4")!),
                 VRContent(
-                    title: "Tokyo Night Fever",
-                    thumbnail: UIImage(named: "urban")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
-                VRContent(
-                    title: "Tokyo Night Fever",
-                    thumbnail: UIImage(named: "urban")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
-                VRContent(
-                    title: "Tokyo Night Fever",
-                    thumbnail: UIImage(named: "urban")!,
-                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
+                    title: "3次会",
+                    thumbnail: UIImage(named: "drink3")!,
+                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/drink3.mp4")!),
+//                VRContent(
+//                    title: "Tokyo Night Fever",
+//                    thumbnail: UIImage(named: "urban")!,
+//                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
+//                VRContent(
+//                    title: "Tokyo Night Fever",
+//                    thumbnail: UIImage(named: "urban")!,
+//                    url: URL(string: "https://hack-u-fukuoka-2019.s3-ap-northeast-1.amazonaws.com/Angel_Falls.mp4")!),
             ]),
         Playlist(
             title: "世界遺産メドレー",
