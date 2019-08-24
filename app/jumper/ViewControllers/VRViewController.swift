@@ -28,7 +28,7 @@ class VRViewController: StereoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        foreseeingVRStereoView()
+        foreseeingVRStereoView()
         teleportation()
         setupPredicator()
     }
@@ -40,28 +40,25 @@ class VRViewController: StereoViewController {
         self.timer.invalidate()
     }
 
-//    fileprivate func foreseeingVRStereoView() {
-//        if !self.playlist!.hasNext() {
-//            dismiss(animated: true, completion: nil)
-//        }
-//        guard let url = self.playlist!.next() else { return }
-//        print("change view")
-//        let playerItem = AVPlayerItem(url: url)
-//        let player = AVQueuePlayer(playerItem: playerItem)
-//        player.play()
-//        self.player = player
-//    }
-    
-    fileprivate func teleportation() {
+    fileprivate func foreseeingVRStereoView() {
         if !self.playlist!.hasNext() {
             dismiss(animated: true, completion: nil)
         }
         guard let url = self.playlist!.next() else { return }
+        print("change view")
         let playerItem = AVPlayerItem(url: url)
         let player = AVQueuePlayer(playerItem: playerItem)
         player.play()
-        super.load(player, format: .stereoOverUnder)
         self.player = player
+    }
+    
+    fileprivate func teleportation() {
+        if let player = self.player {
+            super.load(player, format: .stereoOverUnder)
+        }
+        else {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     fileprivate func setupPredicator() {
@@ -88,7 +85,7 @@ class VRViewController: StereoViewController {
                 self.histories.popLast()
                 self.histories.insert(label, at: 0)
                 if label == "finger" {
-                    //                foreseeingVRStereoView()
+                    foreseeingVRStereoView()
                     teleportation()
                 }
             }
