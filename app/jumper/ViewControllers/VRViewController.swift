@@ -17,6 +17,11 @@ class VRViewController: StereoViewController {
     var audioListener: AudioListener?
     
     var playlist: Playlist?
+    private var histories: [SoundLabel] = [
+        "noise",
+        "noise",
+        "noise",
+    ]
     
     private var timer: Timer!
     
@@ -52,9 +57,7 @@ class VRViewController: StereoViewController {
             dismiss(animated: true, completion: nil)
         }
         guard let url = self.playlist!.next() else { return }
-        print("change view")
         let playerItem = AVPlayerItem(url: url)
-        print(url)
         let player = AVQueuePlayer(playerItem: playerItem)
         player.play()
         super.load(player, format: .stereoOverUnder)
@@ -81,9 +84,13 @@ class VRViewController: StereoViewController {
                 soundsArray: audioListener.audioBuffer.array()
                 ).send()
             print(label)
-            if label == "finger" {
-//                foreseeingVRStereoView()
-                teleportation()
+            if self.histories.first! != label {
+                self.histories.popLast()
+                self.histories.insert(label, at: 0)
+                if label == "finger" {
+                    //                foreseeingVRStereoView()
+                    teleportation()
+                }
             }
         }
         else {
