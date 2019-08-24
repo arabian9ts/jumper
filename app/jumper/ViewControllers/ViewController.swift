@@ -141,7 +141,10 @@ class ViewController: UIViewController {
     
     private func newPlaylistNameView() -> UILabel {
         let coverSize = self.playlistCoverView.bounds.size
-        let playlistNameView = UILabel(frame: CGRect(x: 30, y: coverSize.height - 50, width: coverSize.width - 60, height: 30))
+        var playlistNameView = UILabel(frame: CGRect(x: 30, y: coverSize.height - 50, width: coverSize.width - 60, height: 30))
+        if let nameView = self.playlistNameView {
+            playlistNameView = nameView
+        }
         playlistNameView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         playlistNameView.alpha = 0
         playlistNameView.layer.masksToBounds = true
