@@ -1,8 +1,9 @@
 platform :ios, '12.4'
 
-target 'finger-tripping' do
+target 'Jumper' do
   use_frameworks!
   pod 'SwiftGRPC'
-  pod 'MetalScope', git: "https://github.com/Fork-Forks/MetalScope"
+  pod 'MetalScope', git: "https://github.com/turk-jk/MetalScope"
+  pod 'FSPagerView'
 end
 

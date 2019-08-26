@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Jumper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxf-PK-kQa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.15435350859999999" green="0.1585302982" blue="0.15291983079999999" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mui-zP-LSy"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.12285758870000001" green="0.12601126269999999" blue="0.1221045705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="旅先プレイリスト" id="FLR-OU-6dt"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TcJ-0x-bxb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDK-It-xAP" customClass="FSPagerView" customModule="FSPagerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="248.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jDK-It-xAP" secondAttribute="height" multiplier="5:3" id="40f-aN-caq"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-5H-Zy6">
+                                        <rect key="frame" x="0.0" y="248.5" width="414" height="439.5"/>
+                                        <color key="backgroundColor" red="0.12285758870000001" green="0.12601126269999999" blue="0.1221045705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B53-B6-oi3">
+                                        <rect key="frame" x="0.0" y="688" width="414" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOI-Qd-l7t">
+                                                <rect key="frame" x="80" y="25" width="254" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="m4E-qR-laE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
+                                                <color key="tintColor" red="0.31659433250000002" green="0.1718491912" blue="0.97167116399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Let's Trip !!"/>
+                                                <connections>
+                                                    <action selector="tripButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9d-Nf-l85"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.12285758870000001" green="0.12601126269999999" blue="0.1221045705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="WOI-Qd-l7t" firstAttribute="top" secondItem="B53-B6-oi3" secondAttribute="top" constant="25" id="Ebu-zV-vVj"/>
+                                            <constraint firstAttribute="trailing" secondItem="WOI-Qd-l7t" secondAttribute="trailing" constant="80" id="QQ8-t7-5Nx"/>
+                                            <constraint firstAttribute="width" secondItem="B53-B6-oi3" secondAttribute="height" multiplier="414:120" id="ovQ-Uo-lxf"/>
+                                            <constraint firstItem="WOI-Qd-l7t" firstAttribute="leading" secondItem="B53-B6-oi3" secondAttribute="leading" constant="80" id="yuy-gE-vqH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1228575887487779" green="0.12601126266700513" blue="0.1221045705016965" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3UI-Da-Jmh"/>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="top" secondItem="kxf-PK-kQa" secondAttribute="bottom" id="9Gu-35-JiE"/>
+                            <constraint firstItem="kxf-PK-kQa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PUa-3b-yyY"/>
+                            <constraint firstItem="kxf-PK-kQa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eFl-G1-XkI"/>
+                            <constraint firstItem="TcJ-0x-bxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mDK-q6-7yh"/>
+                            <constraint firstItem="kxf-PK-kQa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mqU-io-hQ9"/>
+                            <constraint firstAttribute="bottom" secondItem="TcJ-0x-bxb" secondAttribute="bottom" id="tDP-Tg-zEt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="playlistContentsView" destination="eD1-5H-Zy6" id="JMH-VX-yr2"/>
+                        <outlet property="playlistCoverView" destination="jDK-It-xAP" id="exK-O1-cQD"/>
+                        <outlet property="tripButton" destination="WOI-Qd-l7t" id="hJi-Fk-7AB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+</document>
